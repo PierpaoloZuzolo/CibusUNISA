@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS categoria;
 DROP TABLE IF EXISTS utente;
 
 CREATE TABLE utente (
-    code INT PRIMARY KEY AUTO_INCREMENT,
+    codice INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(100) UNIQUE NOT NULL, 
     password VARCHAR(255) NOT NULL,
     nome VARCHAR(50) NOT NULL,
@@ -18,19 +18,18 @@ CREATE TABLE utente (
 );
 
 CREATE TABLE categoria (
-    code INT PRIMARY KEY AUTO_INCREMENT,
+    codice INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255)
 );
 
 CREATE TABLE prodotto (	
-    code INT PRIMARY KEY AUTO_INCREMENT,
+    codice INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255),
     prezzo DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    categoria_code INT,
-    cancellato BOOLEAN NOT NULL DEFAULT FALSE, 
-    FOREIGN KEY (categoria_code) REFERENCES categoria(code) ON DELETE SET NULL
+    categoria_codice INT, 
+    FOREIGN KEY (categoria_codice) REFERENCES categoria(codice) ON DELETE SET NULL
 );
 
 CREATE TABLE ordine (
@@ -40,7 +39,7 @@ CREATE TABLE ordine (
     prezzo_totale DECIMAL(10,2) NOT NULL,
     indirizzo_spedizione VARCHAR(255) NOT NULL, 
     metodo_pagamento VARCHAR(50) NOT NULL,      
-    FOREIGN KEY (id_utente) REFERENCES utente(code) ON DELETE CASCADE
+    FOREIGN KEY (id_utente) REFERENCES utente(codice) ON DELETE CASCADE
 );
 
 CREATE TABLE dettaglio_ordine (
