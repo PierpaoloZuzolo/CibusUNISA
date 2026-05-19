@@ -28,7 +28,6 @@ CREATE TABLE prodotto (
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255),
     prezzo DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    categoria_codice INT, 
     FOREIGN KEY (categoria_codice) REFERENCES categoria(codice) ON DELETE SET NULL
 );
 
