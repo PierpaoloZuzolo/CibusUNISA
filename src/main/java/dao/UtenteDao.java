@@ -10,5 +10,3 @@ public interface UtenteDao {
 	public UtenteBean doRetrieveByEmail(String email) throws SQLException;
 
 }
-
-
