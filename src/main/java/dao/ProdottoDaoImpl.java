@@ -57,8 +57,12 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public boolean doDelete(int codice) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		String query = "DELETE FROM prodotto WHERE code = ?";
+        try (Connection connection = ds.getConnection();
+        		PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, codice);
+            int result = preparedStatement.executeUpdate();
+            return result != 0;
 	}
 
 }
