@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.ProdottoBean;
-import model.UtenteBean;
 
 public class ProdottoDaoImpl implements ProdottoDao {
 	
