@@ -6,19 +6,19 @@ public class UtenteBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int code;
+	private int codice;
     private String email; 
     private String password;
     private String nome;
     private String cognome;
     private String ruolo;
     
-	public int getCode() {
-		return code;
+	public int getCodice() {
+		return codice;
 	}
 	
-	public void setCode(int code) {
-		this.code = code;
+	public void setCodice(int codice) {
+		this.codice = codice;
 	}
 	
 	public String getEmail() {

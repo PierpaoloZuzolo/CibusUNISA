@@ -48,7 +48,7 @@ public class UtenteDaoImpl implements UtenteDao {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     utente = new UtenteBean();
-                    utente.setCode(rs.getInt("code"));
+                    utente.setCodice(rs.getInt("codice"));
                     utente.setEmail(rs.getString("email"));
                     utente.setPassword(rs.getString("password"));
                     utente.setNome(rs.getString("nome"));
