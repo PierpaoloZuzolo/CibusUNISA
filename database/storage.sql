@@ -28,25 +28,26 @@ CREATE TABLE prodotto (
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255),
     prezzo DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    categoria_codice INT,
+    attivo BOOLEAN DEFAULT TRUE, 
     FOREIGN KEY (categoria_codice) REFERENCES categoria(codice) ON DELETE SET NULL
 );
 
 CREATE TABLE ordine (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_utente INT NOT NULL,
-    data_ordine DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    prezzo_totale DECIMAL(10,2) NOT NULL,
-    indirizzo_spedizione VARCHAR(255) NOT NULL, 
-    metodo_pagamento VARCHAR(50) NOT NULL,      
-    FOREIGN KEY (id_utente) REFERENCES utente(codice) ON DELETE CASCADE
+    codice INT PRIMARY KEY AUTO_INCREMENT,
+    data_ordine TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    indirizzo_consegna VARCHAR(255) NOT NULL, 
+    metodo_pagamento VARCHAR(50) NOT NULL,
+    utente_codice INT,
+    FOREIGN KEY (utente_codice) REFERENCES utente(codice) ON DELETE CASCADE
 );
 
 CREATE TABLE dettaglio_ordine (
-    id_ordine INT NOT NULL,
-    code_prodotto INT NOT NULL,
+    codice_ordine INT,
+    codice_prodotto INT,
     quantita INT NOT NULL DEFAULT 1,
     prezzo_unitario DECIMAL(10,2) NOT NULL, 
-    PRIMARY KEY (id_ordine, code_prodotto),
-    FOREIGN KEY (id_ordine) REFERENCES ordine(id) ON DELETE CASCADE,    
-    FOREIGN KEY (code_prodotto) REFERENCES prodotto(code) 
+    PRIMARY KEY (codice_ordine, codice_prodotto),
+    FOREIGN KEY (codice_ordine) REFERENCES ordine(codice) ON DELETE CASCADE,
+    FOREIGN KEY (codice_prodotto) REFERENCES prodotto(codice)
 );
