@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.ProdottoBean;
 
@@ -18,18 +20,23 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public void doSave(ProdottoBean p) throws SQLException {
-		String query = "INSERT INTO (nome, descrizione, prezzo, categoriaCodice) VALUES (?, ?, ?, ?)";
+		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_codice) VALUES (?, ?, ?, ?)";
 		
 		try (Connection con = ds.getConnection(); 
-	             PreparedStatement ps = con.prepareStatement(query)) {
+	         PreparedStatement ps = con.prepareStatement(query)) {
 
-	            ps.setString(1, p.getNome());
-	            ps.setString(2, p.getDescrizione());
-	            ps.setBigDecimal(3, p.getPrezzo());
-	            ps.setInt(4, p.getCategoriaCodice());
-
-	            ps.executeUpdate();
+	        ps.setString(1, p.getNome());
+	        ps.setString(2, p.getDescrizione());
+	        ps.setBigDecimal(3, p.getPrezzo());
+	        
+	        if (p.getCategoriaCodice() != null) {
+	        	ps.setInt(4, p.getCategoriaCodice());
+	        } else {
+	        	ps.setNull(4, java.sql.Types.INTEGER);
 	        }
+
+	        ps.executeUpdate();
+	    }
 	}
 
 	@Override
@@ -48,6 +55,12 @@ public class ProdottoDaoImpl implements ProdottoDao {
                     prodotto.setNome(rs.getString("nome"));
                     prodotto.setDescrizione(rs.getString("descrizione"));
                     prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
+                    
+             
+                    int catCodice = rs.getInt("categoria_codice");
+                    
+                    prodotto.setCategoriaCodice(rs.wasNull() ? null : catCodice);
+                    prodotto.setAttivo(rs.getBoolean("attivo"));
                 }
             }
         }
@@ -56,13 +69,38 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public boolean doDelete(int codice) throws SQLException {
-		String query = "DELETE FROM prodotto WHERE code = ?";
+		String query = "UPDATE prodotto SET attivo = FALSE WHERE codice = ?";
         try (Connection connection = ds.getConnection();
-        		PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        	 PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, codice);
             int result = preparedStatement.executeUpdate();
             return result != 0;
         }
+	}
+	
 
+	public List<ProdottoBean> doRetrieveAllActive() throws SQLException {
+		List<ProdottoBean> prodotti = new ArrayList<>();
+        String query = "SELECT * FROM prodotto WHERE attivo = TRUE";
+
+        try (Connection con = ds.getConnection(); 
+             PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                ProdottoBean prodotto = new ProdottoBean();
+                prodotto.setCodice(rs.getInt("codice"));
+                prodotto.setNome(rs.getString("nome"));
+                prodotto.setDescrizione(rs.getString("descrizione"));
+                prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
+                
+                int catCodice = rs.getInt("categoria_codice");
+                prodotto.setCategoriaCodice(rs.wasNull() ? null : catCodice);
+                prodotto.setAttivo(rs.getBoolean("attivo"));
+                
+                prodotti.add(prodotto);
+            }
+        }
+        return prodotti;
 	}
 }

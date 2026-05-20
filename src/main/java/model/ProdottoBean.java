@@ -9,6 +9,7 @@ public class ProdottoBean {
 	private String descrizione;
 	private BigDecimal prezzo;
 	private Integer categoriaCodice;
+	private boolean attivo;
 	
 	public int getCodice() {
 		return codice;
@@ -49,4 +50,12 @@ public class ProdottoBean {
 	public void setCategoriaCodice(Integer categoriaCodice) {
 		this.categoriaCodice = categoriaCodice;
 	} 
+	
+	public boolean isAttivo() {
+		return attivo;
+	}
+
+	public void setAttivo(boolean attivo) {
+		this.attivo = attivo;
+	}
 }
