@@ -20,7 +20,7 @@ public class UtenteDaoImpl implements UtenteDao {
     @Override
     public void doSave(UtenteBean u) throws SQLException {
     
-        String query = "INSERT INTO utente (email, password, nome, cognome, ruolo) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO utente (email, password, nome, cognome, ruolo, telefono) VALUES (?, ?, ?, ?, ?, ?)";
 
     
         try (Connection con = ds.getConnection(); 
