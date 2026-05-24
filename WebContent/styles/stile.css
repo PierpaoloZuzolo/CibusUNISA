@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 body {
-	width: 300px;
-	margin: 0 auto;
+	max-width: 300px; 
+    width: 95%;   
+    margin: 0 auto;
 }
 
 fieldset {
@@ -29,7 +30,7 @@ div {
 }
 
 .error {
-	border: thin solid red;
+	border: 2px solid red;
 	font-size: smaller;
 }
 
@@ -63,4 +64,11 @@ input[type="submit"]{
     margin: 20px auto auto auto;   
     width: 100px; 
     height: auto;         
+}
+
+span {
+    display: block;
+    min-height: 1em; 
+    font-size: 0.8em;
+    margin-top: 2px;
 }
