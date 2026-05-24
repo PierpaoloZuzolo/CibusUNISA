@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import model.UtenteBean;
 import dao.UtenteDaoImpl;
 
-@WebServlet("/Register")
+@WebServlet("/Registration")
 public class RegistrazioneServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
