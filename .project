@@ -28,16 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>images/CibusUNISAlogo.png</name>
-			<type>1</type>
-			<location>C:/Users/pierp/Downloads/CibusUNISAlogo.png</location>
-		</link>
-		<link>
-			<name>images/paninobirre.jpg</name>
-			<type>1</type>
-			<location>C:/Users/pierp/Downloads/paninobirre.jpg</location>
-		</link>
-	</linkedResources>
 </projectDescription>
