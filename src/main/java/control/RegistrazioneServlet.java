@@ -49,6 +49,10 @@ public class RegistrazioneServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request, response);
         }
     }
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request, response);
+    }
 
 
 }

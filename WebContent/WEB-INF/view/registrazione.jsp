@@ -55,6 +55,7 @@
 				<input type="reset" value="Reset">
 			</div>
 		</fieldset>
+	</form>
 
 </body>
 </html>
