@@ -24,8 +24,5 @@ public class MainContext implements ServletContextListener {
 		}
 		context.setAttribute("DataSource", ds);
 	}
-
-	public void contextDestroyed(ServletContextEvent sce) {
-	}
 }
 
