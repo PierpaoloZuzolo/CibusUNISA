@@ -30,6 +30,13 @@
 					onchange="validateFormElem(this, document.getElementById('errorLastname'), nameOrLastnameErrorMessage)">
 				<span id="errorLastname"></span>
 			</div>
+			<div id="phone">
+				<label for="phones">Telefono</label><br>
+				<input type="tel" name="phone" id="phone" placeholder="##########" required
+					pattern="^([0-9]{10})$"
+					onchange="validateFormElem(this, document.getElementById('errorPhone'), phoneErrorMessage)">
+				<span id="errorPhone"></span>
+			<hr>
 			<div>
 				<label for="email">Email</label><br>
 				<input type="email" name="email" placeholder="mariorossi@gmail.com" required
@@ -43,14 +50,6 @@
 					onchange="validateFormElem(this, document.getElementById('errorPassword'), passwordErrorMessage)"
 					id="password">
 				<span id="errorPassword"></span>
-			</div>
-			<hr>
-			<div id="phone">
-				<label for="phones">Telefono</label><br>
-				<input type="tel" name="phone" id="phone" placeholder="##########" required
-					pattern="^([0-9]{10})$"
-					onchange="validateFormElem(this, document.getElementById('errorPhone'), phoneErrorMessage)">
-				<span id="errorPhone"></span>
 			</div>
 			<div>
 				<input type="submit" value="Continua" onclick="return validate()">
