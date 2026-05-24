@@ -14,6 +14,7 @@ CREATE TABLE utente (
     password VARCHAR(255) NOT NULL,
     nome VARCHAR(50) NOT NULL,
     cognome VARCHAR(50) NOT NULL,
+    password VARCHAR(20) NOT NULL,
     ruolo VARCHAR(20) NOT NULL DEFAULT 'cliente' 
 );
 
