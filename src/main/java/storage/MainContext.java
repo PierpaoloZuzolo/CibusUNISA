@@ -18,7 +18,7 @@ public class MainContext implements ServletContextListener {
 		try {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
-			ds = (DataSource) envCtx.lookup("jdbc/storage");
+			ds = (DataSource) envCtx.lookup("jdbc/storageDB");
 		} catch (NamingException e) {
 			System.out.println("Error:" + e.getMessage());
 		}
