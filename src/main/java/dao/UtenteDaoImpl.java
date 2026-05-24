@@ -31,6 +31,7 @@ public class UtenteDaoImpl implements UtenteDao {
             ps.setString(3, u.getNome());
             ps.setString(4, u.getCognome());
             ps.setString(5, u.getRuolo());
+            ps.setString(6, u.getTelefono());
 
             ps.executeUpdate();
         }
@@ -54,6 +55,7 @@ public class UtenteDaoImpl implements UtenteDao {
                     utente.setNome(rs.getString("nome"));
                     utente.setCognome(rs.getString("cognome"));
                     utente.setRuolo(rs.getString("ruolo"));
+                    utente.setTelefono(rs.getString("telefono"));
                 }
             }
         }

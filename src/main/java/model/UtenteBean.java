@@ -12,6 +12,7 @@ public class UtenteBean implements Serializable{
     private String nome;
     private String cognome;
     private String ruolo;
+    private String telefono;
     
 	public int getCodice() {
 		return codice;
@@ -59,5 +60,13 @@ public class UtenteBean implements Serializable{
 	
 	public void setRuolo(String ruolo) {
 		this.ruolo = ruolo;
+	}
+	
+	public String getTelefono() {
+		return telefono;
+	}
+	
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;	
 	}
 }
