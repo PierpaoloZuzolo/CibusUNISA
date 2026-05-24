@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Registrazione</title>
+<script src="scripts/validate.js"></script>
 
 </head>
 <body>
 
 <h3>Registration</h3>
-	<form id="regForm" action="Registration">
+	<form id="regForm" action="Registration" method="POST">
 		<fieldset>
 			<legend>Informazioni</legend>
 			<div>
@@ -37,19 +38,17 @@
 			<div>
 				<label for="password">Password:</label>
 				<input type="password" name="password" required
-					onchange="validateFormElem(this, document.getElement('errorPassword'), passwordErrorMessage)"
+					onchange="validateFormElem(this, document.getElementById('errorPassword'), passwordErrorMessage)"
 					id="password">
 				<span id="errorPassword"></span>
 			</div>
 			<hr>
-			<div id="phones">
-				<div id="phoneRow0">
-					<label for="phone0">Telefono:</label>
-					<input type="tel" name="phone" id="phone0" placeholder="###-#######" required
-						pattern="^([0-9]{3}-[0-9]{7})$"
-						onchange="validateFormElem(this, document.getElementById('errorPhone0'), phoneErrorMessage)">
-					<span id="errorPhone0"></span>
-				</div>
+			<div id="phone">
+				<label for="phone0">Telefono:</label>
+				<input type="tel" name="phone" id="phone" placeholder="###-#######" required
+					pattern="^([0-9]{3}-[0-9]{7})$"
+					onchange="validateFormElem(this, document.getElementById('errorPhone'), phoneErrorMessage)">
+				<span id="errorPhone"></span>
 			</div>
 			<div>
 				<input type="submit" value="Register" onclick="return validate()">
