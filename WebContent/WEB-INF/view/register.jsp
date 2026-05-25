@@ -57,6 +57,9 @@
             <div>
                 <input type="submit" value="Continua">
             </div>
+            <br>
+			<br>
+			<p> Hai già un account? <a href="http://localhost:8080/CibusUNISA/login">Accedi</a>
         </fieldset>
     </form>
 </body>
