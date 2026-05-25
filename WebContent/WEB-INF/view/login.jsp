@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Accesso</title>
+<link rel="stylesheet" href="styles/accesso.css">
 
 </head>
 <body>

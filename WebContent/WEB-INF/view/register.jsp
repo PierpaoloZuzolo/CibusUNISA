@@ -12,7 +12,7 @@
 
     <form id="regForm" action="Registration" method="POST" onsubmit="return validate()" novalidate>
         <fieldset>
-            <h3>Creare account</h3>
+            <h3>Registrati</h3>
             <p>Tutti i campi sono obbligatori</p>
 
             <div>

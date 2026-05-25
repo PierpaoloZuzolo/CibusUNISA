@@ -1,0 +1,78 @@
+@charset "UTF-8";
+body {
+	max-width: 300px; 
+    width: 95%;   
+    margin: 0 auto;
+}
+
+fieldset {
+	border: 1px solid #D3D3D3;
+	border-radius: 7px;
+	margin: 10px 0px 0px 0px;
+}
+
+input {
+	border: 1px solid black;
+	border-radius: 8px;
+	width:95%;
+}
+
+input, span {
+	padding: 3px;
+	
+}
+
+label, input {
+	margin-right: 3px;
+}
+
+div {
+	margin: 6px 0 6px 0;
+}
+
+.error {
+	border: 2px solid red;
+	font-size: smaller;
+}
+
+label, p, h3{
+	font-family: sans-serif;
+}
+
+label{
+	font-size: medium;
+}
+
+p{
+	font-size:75%
+}
+
+h3{
+	font-size:200%;
+	margin: 10px 0px 5px 0px;
+}
+
+label{
+	font-size: 90%;
+	font-weight: bold;
+}
+
+input[type="submit"]{
+	color: #A00A25;
+	border-radius: 15px;
+	border-color: #A00A25;
+}
+
+#logoSopra {
+    display: block;        
+    margin: 20px auto auto auto;   
+    width: 100px; 
+    height: auto;         
+}
+
+span {
+    display: block;
+    min-height: 1em; 
+    font-size: 0.8em;
+    margin-top: 2px;
+}
