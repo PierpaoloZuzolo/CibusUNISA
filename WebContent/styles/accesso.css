@@ -3,13 +3,18 @@ body {
 	max-width: 300px; 
     width: 95%;   
     margin: 0 auto;
-    font-family: Georgia, "Times New Roman", Times, serif
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: #f4f4f4; 
 }
 
 fieldset {
-	border: 1px solid #D3D3D3;
-	border-radius: 7px;
-	margin: 10px 0px 0px 0px;
+	max-width: 500px; 
+    width: 90%;       
+    margin: 30px auto; 
+    border: 1px solid #D3D3D3;
+    border-radius: 7px;
+    padding: 20px;    
+    box-sizing: border-box; 
 }
 
 input {
