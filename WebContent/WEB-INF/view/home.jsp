@@ -10,13 +10,13 @@
 </head>
 <body>
 <header>
-	<a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+	<a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
 
 	<nav>
 		<ul> 
-			<li><a href="http://localhost:8080/CibusUNISA/info">Chi siamo</a></li>
-			<li><a href="http://localhost:8080/CibusUNISA/ordina">Ordina</a></li>
-			<li><a href="http://localhost:8080/CibusUNISA/login">Accedi</a></li>
+			<li><a href="info">Chi siamo</a></li>
+			<li><a href="ordina">Ordina</a></li>
+			<li><a href="login">Accedi</a></li>
 		</ul>
 	</nav>
 </header>

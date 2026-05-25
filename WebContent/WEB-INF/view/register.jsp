@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
+    <a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
 
     <form id="regForm" action="Registration" method="POST" onsubmit="return validate()" novalidate>
         <fieldset>
@@ -61,7 +61,7 @@
             </div>
             <br>
 			<br>
-			<p> Hai già un account? <a href="http://localhost:8080/CibusUNISA/login">Accedi</a>
+			<p> Hai già un account? <a href="login">Accedi</a>
         </fieldset>
     </form>
 </body>

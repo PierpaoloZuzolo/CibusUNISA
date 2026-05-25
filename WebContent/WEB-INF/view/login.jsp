@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+<a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
 
 	<form id="logForm" action="Accesso" method="POST">
 		<fieldset>
@@ -34,7 +34,7 @@
 			</div>
 			<br>
 			<br>
-			<p> Non hai un account? <a href="http://localhost:8080/CibusUNISA/Registration">Registrati</a>
+			<p> Non hai un account? <a href="Registration">Registrati</a>
 		</fieldset>
 	</form>
 
