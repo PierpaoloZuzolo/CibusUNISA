@@ -8,7 +8,7 @@
     <script src="scripts/validazione.js"></script>
 </head>
 <body>
-    <img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra">
+    <a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
 
     <form id="regForm" action="Registration" method="POST" onsubmit="return validate()" novalidate>
         <fieldset>

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra">
+<a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
 
 	<form id="logForm" action="Accesso" method="POST">
 		<fieldset>
