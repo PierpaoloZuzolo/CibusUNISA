@@ -3,6 +3,7 @@ body {
 	max-width: 300px; 
     width: 95%;   
     margin: 0 auto;
+    font-family: Georgia, "Times New Roman", Times, serif
 }
 
 fieldset {
@@ -33,10 +34,6 @@ div {
 .error {
 	border: 2px solid red;
 	font-size: smaller;
-}
-
-label, p, h3{
-	font-family: sans-serif;
 }
 
 label{
