@@ -47,7 +47,7 @@ public class AccessoServlet extends HttpServlet{
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/view/l.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
     }
 
 
