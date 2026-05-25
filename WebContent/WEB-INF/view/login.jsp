@@ -11,8 +11,9 @@
 </head>
 <body>
 <a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+<script src="scripts/validazioneLogin.js"></script>
 
-	<form id="logForm" action="Accesso" method="POST">
+	<form id="logForm" action="login" method="POST" onsubmit="return validate()" novalidate>
 		<fieldset>
 			<h3>Accedi</h3>
 			<div>
@@ -30,6 +31,11 @@
 				<span id="errorPassword"></span>
 			</div>
 			<div>
+			<% if (request.getAttribute("errore") != null) { %>
+   				 <div class="error">
+      	    <%= request.getAttribute("errore") %>
+    			</div>
+			<% } %>
 				<input type="submit" value="Continua" onclick="return validate()">
 			</div>
 			<br>
