@@ -6,6 +6,8 @@
     <title>Registrazione</title>
     <link rel="stylesheet" href="styles/registrazione.css">
     <script src="scripts/validazione.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 </head>
 <body>
     <a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
