@@ -31,6 +31,9 @@
 			<div>
 				<input type="submit" value="Continua" onclick="return validate()">
 			</div>
+			<br>
+			<br>
+			<p> Non hai un account? <a href="http://localhost:8080/CibusUNISA/Registration">Registrati</a>
 		</fieldset>
 	</form>
 
