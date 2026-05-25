@@ -5,8 +5,30 @@
 <head>
 <meta charset="UTF-8">
 <title>CibusUNISA</title>
+<link rel="stylesheet" href="styles/home.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<header>
+	<a href="http://localhost:8080/CibusUNISA/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+
+	<nav>
+		<ul> 
+			<li><a href="http://localhost:8080/CibusUNISA/info">Chi siamo</a></li>
+			<li><a href="http://localhost:8080/CibusUNISA/ordina">Ordina</a></li>
+			<li><a href="http://localhost:8080/CibusUNISA/login">Accedi</a></li>
+		</ul>
+	</nav>
+</header>
+
+<img src="images/CibusUNISAHomePage.png" alt="foto HomePage" id="fotoHomeDesktop">
+<img src="images/CibusUNISAHomePageVerticale.png" alt="foto HomePage" id="fotoHomeTelefono">
+
+
+<footer>
+&copy; 2026, CibusUNISA <br> 
+Tutte le informazioni degli utenti appartengono al proprietario del sito.
+</footer>
 
 </body>
 </html>

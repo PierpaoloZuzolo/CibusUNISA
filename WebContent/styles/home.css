@@ -1,0 +1,88 @@
+@charset "UTF-8";
+body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 0;
+    padding: 0;
+}
+
+#logoSopra{      
+    margin: 2px auto auto auto;
+    width: 100%;   
+    max-width: 150px; 
+    height: auto; 
+}
+
+a:link, a:visited {
+  	color:            black;
+  	text-decoration:  none;
+}
+
+nav ul{
+	list-style-type: none;	
+	margin: 10px 10px 0px 10px;
+}
+
+nav ul li{
+	display: inline;
+	padding: 5px 10px;
+}
+
+header {
+    display: flex;                 
+    align-items: center;           
+    justify-content: space-between;
+    padding: 10px 20px;            
+    background-color: #f8f9fa;
+}
+
+footer{
+	text-align: center;
+	padding: 15px;
+	font-size: 65%;
+	margin: 10px 0px;
+}
+
+#fotoHomeDesktop{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#fotoHomeTelefono{
+	display: none;
+}
+
+
+@media (max-width: 700px) {   
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        text-align: center; 
+        padding: 5px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        font-size: 0.8rem; 
+        padding: 10px;
+    }
+
+    #fotoHomeDesktop {
+        display: none;
+    }
+    
+    #fotoHomeTelefono {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+}
