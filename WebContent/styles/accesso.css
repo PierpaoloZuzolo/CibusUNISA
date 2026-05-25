@@ -37,7 +37,7 @@ div {
 }
 
 .error {
-	border: 2px solid red;
+	color: red;
 	font-size: smaller;
 }
 
