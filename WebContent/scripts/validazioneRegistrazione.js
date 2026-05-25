@@ -1,7 +1,7 @@
 const nameOrLastnameErrorMessage = "Usa solo lettere.";
 const emailErrorMessage = "Formato richiesto: nome@dominio.it";
 const phoneErrorMessage = "Inserire esattamente 10 cifre.";
-const passwordErrorMessage = "La password deve contenere almeno 6 caratteri.";
+const passwordErrorMessage = "La password deve contenere almeno 6 caratteri e un carattere speciale.";
 const emptyFieldErrorMessage = "Campo obbligatorio.";
 
 function validateFormElem(formElem, span, errorMessage) {
