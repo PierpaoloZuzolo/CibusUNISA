@@ -32,8 +32,7 @@
 
 
 <footer>
-&copy; 2026, CibusUNISA <br> 
-Tutte le informazioni degli utenti appartengono al proprietario del sito.
+&copy; 2026, CibusUNISA
 </footer>
 
 </body>
