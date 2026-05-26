@@ -18,7 +18,6 @@
 			<li><a href="ordina">Ordina</a></li>
 			<% if (session.getAttribute("utente") == null) { %>
 			<li><a href="login">Accedi</a></li>
-            <li><a href="Registration">Registrati</a></li>
             
         	<% } else { %>
             <li><a href="storico">I miei ordini</a></li>
