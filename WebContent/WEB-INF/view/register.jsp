@@ -59,8 +59,7 @@
             <div>
                 <input type="submit" value="Continua">
             </div>
-            <br>
-			<br>
+            <hr>
 			<p> Hai già un account? <a href="login">Accedi</a>
         </fieldset>
     </form>

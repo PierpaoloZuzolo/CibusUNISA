@@ -38,8 +38,7 @@
 			<% } %>
 				<input type="submit" value="Continua" onclick="return validate()">
 			</div>
-			<br>
-			<br>
+			<hr>
 			<p> Non hai un account? <a href="Registration">Registrati</a>
 		</fieldset>
 	</form>
