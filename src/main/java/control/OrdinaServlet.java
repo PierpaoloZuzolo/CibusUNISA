@@ -5,7 +5,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.ProdottoBean;
+
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import dao.ProdottoDaoImpl;
 
 /**
  * Servlet implementation class OrdinaServlet
@@ -26,7 +32,18 @@ public class OrdinaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
+		ProdottoDaoImpl prodottoDao = new ProdottoDaoImpl();
+		try {
+			List<ProdottoBean> listaProdotti;
+			listaProdotti = prodottoDao.doRetrieveAllActive();
+			request.setAttribute("catalogo", listaProdotti);
+		} catch (SQLException e) {
+			request.setAttribute("errore", "Errore nel caricamento del catalogo.");
+			request.getRequestDispatcher("/WEB-INF/view/home.jsp");
+		}
+		
+		
 		request.getRequestDispatcher("/WEB-INF/view/ordina.jsp").forward(request, response);
 	}
 
