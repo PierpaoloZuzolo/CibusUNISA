@@ -75,8 +75,16 @@ footer {
 }
 
 .info{
-	margin: 5px;
+	margin-left: 10px;
+	padding-bottom: 5px;
 }
+
+.infoTitolo{
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+
+
 
 .menu-grid {
     display: flex;
@@ -86,15 +94,16 @@ footer {
   }
 
   .menu-card {
-    background: #fff;
-    border-radius: 12px;
+    background: #F5F5F5;
     padding: 20px;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin: 10px 10px;
+	
     flex: 1 1 200px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-bottom: 4px solid black;
-  }
+    box-shadow: 6px 4px 6px rgba(0,0,0,0.05);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 12px;
+}
 
   .menu-card:hover {
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
@@ -127,9 +136,7 @@ footer {
         padding: 15px;
         margin-top: 10px;
     }
-}
-
-@media (max-width: 700px) {   
+      
     header {
         flex-direction: column;
         padding: 5px;

@@ -33,21 +33,21 @@
 <img alt="foto di cucina" src="images/RagazzachefapaniniTelefono.png" id="fotoHomeTelefono">
 
 <h1 class="info"> Informazioni su CibusUNISA</h1><br>
-<h2 class="info">Progetto</h2>
+<h2 class="infoTitolo">Progetto</h2>
 <p class="info"> CibusUNISA non è solo un locale: è il rifugio perfetto per ogni studente 
 affamato e il punto di ritrovo ideale tra un corso e l'altro. Sappiamo bene che la vita 
 universitaria è fatta di lezioni infinite, sessioni di studio disperate in biblioteca 
 e pause troppo brevi. Ecco perché siamo nati: per darti la giusta carica, unendo gusto, 
 qualità e velocità.</p>
 
-<h2 class="info">La nostra missione</h2>
+<h2 class="infoTitolo">La nostra missione</h2>
 <p class="info"> Vogliamo essere il tuo porto sicuro per la pausa pranzo, 
 per uno spuntino al volo o per una cena post-esame. Il nostro obiettivo è semplice: 
 offrire cibo delizioso, preparato al momento con ingredienti freschi, mantenendo prezzi 
 a misura di studente.
 
 <br>
-<h2 class="info">Cosa trovi da noi</h2>
+<h2 class="infoTitolo">Cosa trovi da noi</h2>
 <div class="menu-grid">
   <div class="menu-card">
     <div class="menu-icon">🍕</div>
