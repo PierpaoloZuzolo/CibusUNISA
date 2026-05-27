@@ -34,15 +34,17 @@ java.util.List<model.ProdottoBean> catalogo = (java.util.List<model.ProdottoBean
 if(catalogo != null){
 	for(model.ProdottoBean prodotto: catalogo){
 %>
-	<div class="prodotto-card">
-		<div class="prodotto-nome"><%= prodotto.getNome()%>></div>
-		<div class="prodotto-descrizione"><%= prodotto.getDescrizione() %></div>
-		<div class="prodotto-prezzo"><%= prodotto.getPrezzo() %></div>
-	</div>
+	<div class="prodotto-grid">
+		<div class="prodotto-card">
+			<div class="prodotto-nome"><%= prodotto.getNome()%>></div>
+			<div class="prodotto-descrizione"><%= prodotto.getDescrizione() %></div>
+			<div class="prodotto-prezzo"><%= prodotto.getPrezzo() %></div>
+		</div>
 <%		
 	}
 }
 %>
+	</div>
 
 
 </body>
