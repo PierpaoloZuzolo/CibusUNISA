@@ -10,7 +10,6 @@
 </head>
 <body>
 <header>
-
 	<a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
 
 	<nav>
