@@ -1,5 +1,8 @@
 package dao;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +17,14 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	
 	private DataSource ds;
 
-	public ProdottoDaoImpl(DataSource ds) {
-        this.ds = ds;
+	public ProdottoDaoImpl() {
+		try {
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:comp/env");
+            this.ds = (DataSource) envContext.lookup("jdbc/storageDB"); 
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
     }
 
 	@Override
