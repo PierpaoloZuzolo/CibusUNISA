@@ -14,14 +14,15 @@
 
 	<nav>
 		<ul> 
-			<li><a href="home">Home</a>
-			<li><a href="info">Chi siamo</a></li>
+			<li><a href="<%=request.getContextPath()%>/home">Home</a>
+			<li><a href="<%=request.getContextPath()%>/info">Chi siamo</a></li>
 			<% if (session.getAttribute("utente") == null) { %>
-			<li><a href="login">Accedi</a></li>
+			<li><a href="<%=request.getContextPath()%>/login">Accedi</a></li>
+			<li><a href="<%=request.getContextPath()%>/Registration">Registrati</a></li>
             
         	<% } else { %>
-            <li><a href="storico">I miei ordini</a></li>
-            <li><a href="logout">Disconnettiti</a></li>
+            <li><a href="<%=request.getContextPath()%>/storico">I miei ordini</a></li>
+            <li><a href="<%=request.getContextPath()%>/logout">Disconnettiti</a></li>
         <% } %>
 		</ul>
 	</nav>
@@ -34,9 +35,9 @@ java.util.List<model.ProdottoBean> catalogo = (java.util.List<model.ProdottoBean
 if(catalogo != null){
 	for(model.ProdottoBean prodotto: catalogo){
 %>
-	<div class="prodotto-grid">
+	<div class="prodotti">
 		<div class="prodotto-card">
-			<div class="prodotto-nome"><%= prodotto.getNome()%>></div>
+			<div class="prodotto-nome"><%= prodotto.getNome()%></div>
 			<div class="prodotto-descrizione"><%= prodotto.getDescrizione() %></div>
 			<div class="prodotto-prezzo"><%= prodotto.getPrezzo() %></div>
 		</div>

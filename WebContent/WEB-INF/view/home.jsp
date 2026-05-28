@@ -16,13 +16,6 @@
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/info">Chi siamo</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
-			<% if (session.getAttribute("utente") == null) { %>
-			<li><a href="<%=request.getContextPath()%>/login">Accedi</a></li>
-            
-        	<% } else { %>
-            <li><a href="<%=request.getContextPath()%>/storico">I miei ordini</a></li>
-            <li><a href="<%=request.getContextPath()%>/logout">Disconnettiti</a></li>
-        <% } %>
 		</ul>
 	</nav>
 </header>
