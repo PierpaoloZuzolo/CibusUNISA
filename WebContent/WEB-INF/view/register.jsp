@@ -55,6 +55,16 @@
                     onchange="validateFormElem(this, document.getElementById('errorPassword'), passwordErrorMessage)">
                 <span id="errorPassword"></span>
             </div>
+            
+            <p class="error">
+            <% 
+            	String errore = (String) request.getAttribute("errore");
+            
+            	if(errore != null){
+            		out.println(errore);
+            	}
+            %>
+            </p>
 
             <div>
                 <input type="submit" value="Continua">
