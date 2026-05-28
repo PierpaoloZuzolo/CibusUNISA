@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+<a href="<%=request.getContextPath()%>/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
 <script src="scripts/validazioneLogin.js"></script>
 
 	<form id="logForm" action="login" method="POST" onsubmit="return validate()" novalidate>
@@ -39,7 +39,7 @@
 				<input type="submit" value="Continua" onclick="return validate()">
 			</div>
 			<hr>
-			<p> Non hai un account? <a href="Registration">Registrati</a>
+			<p> Non hai un account? <a href="<%=request.getContextPath()%>/Registration">Registrati</a>
 		</fieldset>
 	</form>
 

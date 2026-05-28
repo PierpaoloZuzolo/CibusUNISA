@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <a href="home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
+    <a href="<%=request.getContextPath()%>/home"><img src="images/LogoCibusUNISA.png" alt="Logo" id="logoSopra"></a>
 
     <form id="regForm" action="Registration" method="POST" onsubmit="return validate()" novalidate>
         <fieldset>
@@ -60,7 +60,7 @@
                 <input type="submit" value="Continua">
             </div>
             <hr>
-			<p> Hai già un account? <a href="login">Accedi</a>
+			<p> Hai già un account? <a href="<%=request.getContextPath()%>/login">Accedi</a>
         </fieldset>
     </form>
 </body>
