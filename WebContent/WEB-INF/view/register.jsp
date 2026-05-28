@@ -56,15 +56,11 @@
                 <span id="errorPassword"></span>
             </div>
             
-            <p class="error">
-            <% 
-            	String errore = (String) request.getAttribute("errore");
-            
-            	if(errore != null){
-            		out.println(errore);
-            	}
-            %>
-            </p>
+            <% if (request.getAttribute("errore") != null) { %>
+   				 <div class="error">
+      	    <%= request.getAttribute("errore") %>
+    			</div>
+			<% } %>
 
             <div>
                 <input type="submit" value="Continua">
