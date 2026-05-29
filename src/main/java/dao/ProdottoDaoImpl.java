@@ -90,7 +90,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	public List<ProdottoBean> doRetrieveAllActive() throws SQLException {
 		List<ProdottoBean> prodotti = new ArrayList<>();
-        String query = "SELECT * FROM prodotto WHERE attivo = TRUE";
+        String query = "SELECT * FROM prodotto WHERE attivo = TRUE ORDER BY categoriaCodice ASC";
 
         try (Connection con = ds.getConnection(); 
              PreparedStatement ps = con.prepareStatement(query);
