@@ -31,12 +31,10 @@ public class AccessoServlet extends HttpServlet{
 
             if (bean != null && bean.getPassword().equals(password)) {
                 request.getSession().setAttribute("utente", bean); 
-                
-                request.setAttribute("messaggio", "Login effettuato con successo!");
-                request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/ordina");
             } else {
                 request.setAttribute("errore", "Email o password errati.");
-                request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/view/ordina.jsp").forward(request, response);
             }
 
         } catch (SQLException e) {
