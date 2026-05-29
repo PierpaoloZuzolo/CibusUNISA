@@ -21,7 +21,7 @@ public class DisconnessioneServlet extends HttpServlet {
             request.getSession().invalidate(); 
         }
         
-        response.sendRedirect("home");
+        response.sendRedirect("ordina");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
