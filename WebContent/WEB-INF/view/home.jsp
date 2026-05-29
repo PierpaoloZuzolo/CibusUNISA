@@ -11,7 +11,7 @@
 <body>
 <header>
 	<a href="<%=request.getContextPath()%>/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
-
+	
 	<nav>
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/info">Chi siamo</a></li>
