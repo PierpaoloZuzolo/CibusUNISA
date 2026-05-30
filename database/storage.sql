@@ -19,7 +19,7 @@ CREATE TABLE utente (
 );
 
 CREATE TABLE categoria (
-    codice INT PRIMARY KEY AUTO_INCREMENT,
+    codice INT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255)
 );
