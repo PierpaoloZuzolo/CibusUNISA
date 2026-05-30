@@ -40,7 +40,7 @@ public class UtenteDaoImpl implements UtenteDao {
     @Override
     public UtenteBean doRetrieveByEmail(String email) throws SQLException {
         UtenteBean utente = null;
-        String query = "SELECT * FROM utente WHERE email = ?";
+        String query = "SELECT * FROM utente WHERE email = ? AND ruolo = ?";
 
         try (Connection con = ds.getConnection(); 
              PreparedStatement ps = con.prepareStatement(query)) {
