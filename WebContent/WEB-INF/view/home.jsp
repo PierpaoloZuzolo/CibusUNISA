@@ -1,3 +1,4 @@
+<%@page import="model.UtenteBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,6 +17,13 @@
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/info">Chi siamo</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
+			
+			<%
+			model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente");
+			if (session.getAttribute("user")!=null&&u.getRuolo().equals("admin")){
+			%>
+				<li><a href="<%=request.getContextPath()%>/controllo">Controllo</a></li>			
+			<%}%>
 		</ul>
 	</nav>
 </header>
