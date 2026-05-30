@@ -40,7 +40,7 @@ public class OrdinaServlet extends HttpServlet {
 			request.setAttribute("catalogo", listaProdotti);
 		} catch (SQLException e) {
 			request.setAttribute("errore", "Errore nel caricamento del catalogo.");
-			request.getRequestDispatcher("/WEB-INF/view/home.jsp");
+			request.getRequestDispatcher("/WEB-INF/view/ordina.jsp").forward(request, response);;
 		}
 		
 		
