@@ -24,12 +24,20 @@
         	<% } else {	%>
             <li><a href="<%=request.getContextPath()%>/storico">I miei ordini</a></li>
             <li><a href="<%=request.getContextPath()%>/logout">
-            <% if (session.getAttribute("utente") != null) { 
+            <%
 				model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente"); 
 				out.print ("Ciao " + u.getNome() + "! (Logout)");
-			} %>
-		</a></li>
-        <% } %>
+			%></a></li>
+			<li><a href="<%=request.getContextPath()%>/gestione">
+			<%
+				if(u.getRuolo().equals("admin")){%>
+				Gestione</a></li>
+			<%	
+				}
+			%>
+
+			<% } %>
+			
 		</ul>
 	</nav>
 </header>
