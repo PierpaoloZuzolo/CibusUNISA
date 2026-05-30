@@ -38,10 +38,10 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	        ps.setString(2, p.getDescrizione());
 	        ps.setBigDecimal(3, p.getPrezzo());
 	        
-	        if (p.getCategoriaCodice() != null) {
-	        	ps.setInt(4, p.getCategoriaCodice());
+	        if (p.getCategoriaNome() != null) {
+	        	ps.setString(4, p.getCategoriaNome());
 	        } else {
-	        	ps.setNull(4, java.sql.Types.INTEGER);
+	        	ps.setNull(4, java.sql.Types.VARCHAR);
 	        }
 
 	        ps.executeUpdate();
@@ -66,9 +66,9 @@ public class ProdottoDaoImpl implements ProdottoDao {
                     prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
                     
              
-                    int catCodice = rs.getInt("categoria_codice");
+                    String catCodice = rs.getString("categoria_nome");
                     
-                    prodotto.setCategoriaCodice(rs.wasNull() ? null : catCodice);
+                    prodotto.setCategoriaNome(rs.wasNull() ? null : catCodice);
                     prodotto.setAttivo(rs.getBoolean("attivo"));
                 }
             }
@@ -103,8 +103,8 @@ public class ProdottoDaoImpl implements ProdottoDao {
                 prodotto.setDescrizione(rs.getString("descrizione"));
                 prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
                 
-                int catCodice = rs.getInt("categoria_codice");
-                prodotto.setCategoriaCodice(rs.wasNull() ? null : catCodice);
+                String catCodice = rs.getString("categoria_nome");
+                prodotto.setCategoriaNome(rs.wasNull() ? null : catCodice);
                 prodotto.setAttivo(rs.getBoolean("attivo"));
                 
                 prodotti.add(prodotto);
