@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Gestione</title>
+<link rel="stylesheet" href="styles/gestione.css">
 </head>
 <body>
 
