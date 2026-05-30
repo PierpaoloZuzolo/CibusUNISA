@@ -19,8 +19,7 @@ CREATE TABLE utente (
 );
 
 CREATE TABLE categoria (
-    codice INT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
+    nome VARCHAR(50) PRIMARY KEY,
     descrizione VARCHAR(255)
 );
 
@@ -29,9 +28,9 @@ CREATE TABLE prodotto (
     nome VARCHAR(50) NOT NULL,
     descrizione VARCHAR(255),
     prezzo DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    categoria_codice INT,
+    categoria_nome VARCHAR(50),
     attivo BOOLEAN DEFAULT TRUE, 
-    FOREIGN KEY (categoria_codice) REFERENCES categoria(codice) ON DELETE SET NULL
+    FOREIGN KEY (categoria_nome) REFERENCES categoria(nome) ON DELETE SET NULL
 );
 
 CREATE TABLE ordine (
