@@ -34,7 +34,7 @@ public class AccessoServlet extends HttpServlet{
                 response.sendRedirect(request.getContextPath() + "/ordina");
             } else {
                 request.setAttribute("errore", "Email o password errati.");
-                request.getRequestDispatcher("/WEB-INF/view/ordina.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
             }
 
         } catch (SQLException e) {
