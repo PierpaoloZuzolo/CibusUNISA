@@ -50,7 +50,7 @@
             	if(categoriaCorrente != null && !categoriaCorrente.equals(categoriaUltima)){
                     categoriaUltima = categoriaCorrente; 
         %>
-            		<h3 class="sezione"><%=categoriaCorrente%></h3>
+            		<h2 class="sezione"><%=categoriaCorrente%></h2>
         <%
                 }
         %>
