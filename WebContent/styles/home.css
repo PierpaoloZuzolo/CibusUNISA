@@ -4,12 +4,14 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     margin: 0;
     padding-top: 90px;
+    margin-top: 5px;
+    background-color: #E4E5E0;
 }
 
 #logoSopra {      
     margin: 2px auto auto auto;
     width: 100%;   
-    max-width: 150px; 
+    max-width: 100px; 
     height: auto; 
 }
 
@@ -25,7 +27,8 @@ nav ul {
 
 nav ul li {
     display: inline;
-    padding: 5px 10px;
+    padding: 5px 20px;
+    margin: 0px 20px 0px 0px;
 }
 
 header {
@@ -38,7 +41,7 @@ header {
     display: flex;                 
     align-items: center;           
     justify-content: space-between;
-    padding: 10px 20px;            
+    padding: 0px 20px;            
     background-color: #f8f9fa;
 }
 
@@ -60,6 +63,10 @@ footer {
     display: none;
 }
 
+
+
+
+
 /*stile per info.jsp*/
 #fotoRagazza{
 	height:auto;
@@ -67,7 +74,7 @@ footer {
 }
 
 #frase{
-	background: #970A24;
+	background: #561109;
 	color: white;
 	padding: 25px;
 	text-align: center;
@@ -141,11 +148,150 @@ footer {
     text-align: center;
   }
   
-  .p-card{
+.p-card{
   	text-align: center;
-  }
+}
   
-  @media (max-width: 700px) {
+  
+  /*Ordina.jsp*/
+h2.sezione{
+	background-color: #E4E5E0;
+	color: #561109;
+	padding: 0px 0px 0px 5px;
+}
+  
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 30px; /* Spazio tra menù e carrello */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- COLONNA SINISTRA: MENÙ --- */
+.menu-sezione {
+    flex: 2;
+    background-color: white;
+    padding: 10px;
+}
+
+/* CARD DEL SINGOLO PRODOTTO */
+.prodotto-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    border-color: black;
+}
+
+.prodotto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.prodotto-nome {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+}
+
+.prodotto-descrizione {
+    font-size: 14px;
+    color: black;
+}
+
+.prodotto-prezzo {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-top: 5px;
+}
+
+/* BOTTONE PIÙ (+) */
+.btn-add {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #f5f5f5;
+    border-color: #999999;
+}
+
+
+/* --- COLONNA DESTRA: CARRELLO --- */
+.carrello-sezione {
+    flex: 1;
+    position: relative;
+}
+
+.carrello-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    position: sticky;
+    top: 20px; 
+}
+
+.carrello-card h3 {
+    text-align: left;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.carrello-vuoto {
+    margin: 40px 0;
+    color: #666666;
+}
+
+.carrello-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.carrello-vuoto p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* BOTTONE CHECKOUT DISABILITATO */
+.btn-checkout {
+    width: 100%;
+    padding: 14px;
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+  
+  
+  
+  
+@media (max-width: 700px) {
     .menu-grid {
         flex-direction: column;
         gap: 15px; 
@@ -211,3 +357,8 @@ footer {
         margin-top: 10px;
     }
 }
+
+
+
+
+
