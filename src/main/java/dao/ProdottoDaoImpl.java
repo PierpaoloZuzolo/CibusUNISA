@@ -29,7 +29,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public void doSave(ProdottoBean p) throws SQLException {
-		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_codice) VALUES (?, ?, ?, ?)";
+		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_nome) VALUES (?, ?, ?, ?)";
 		
 		try (Connection con = ds.getConnection(); 
 	         PreparedStatement ps = con.prepareStatement(query)) {
@@ -37,7 +37,6 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	        ps.setString(1, p.getNome());
 	        ps.setString(2, p.getDescrizione());
 	        ps.setBigDecimal(3, p.getPrezzo());
-	        
 	        if (p.getCategoriaNome() != null) {
 	        	ps.setString(4, p.getCategoriaNome());
 	        } else {
@@ -64,11 +63,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
                     prodotto.setNome(rs.getString("nome"));
                     prodotto.setDescrizione(rs.getString("descrizione"));
                     prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
-                    
-             
-                    String catCodice = rs.getString("categoria_nome");
-                    
-                    prodotto.setCategoriaNome(rs.wasNull() ? null : catCodice);
+                    prodotto.setCategoriaNome(rs.getString("categoria_nome"));
                     prodotto.setAttivo(rs.getBoolean("attivo"));
                 }
             }
@@ -90,7 +85,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	public List<ProdottoBean> doRetrieveAllActive() throws SQLException {
 		List<ProdottoBean> prodotti = new ArrayList<>();
-        String query = "SELECT * FROM prodotto WHERE attivo = TRUE ORDER BY categoria_codice ASC";
+        String query = "SELECT * FROM prodotto WHERE attivo = TRUE ORDER BY categoria_nome";
 
         try (Connection con = ds.getConnection(); 
              PreparedStatement ps = con.prepareStatement(query);
@@ -102,9 +97,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
                 prodotto.setNome(rs.getString("nome"));
                 prodotto.setDescrizione(rs.getString("descrizione"));
                 prodotto.setPrezzo(rs.getBigDecimal("prezzo"));
-                
-                String catCodice = rs.getString("categoria_nome");
-                prodotto.setCategoriaNome(rs.wasNull() ? null : catCodice);
+                prodotto.setCategoriaNome(rs.getString("categoria_nome"));
                 prodotto.setAttivo(rs.getBoolean("attivo"));
                 
                 prodotti.add(prodotto);
