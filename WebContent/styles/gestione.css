@@ -44,3 +44,10 @@ header {
     padding: 0px 20px;            
     background-color: #f8f9fa;
 }
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 65%;
+    margin: 10px 0px;
+}
