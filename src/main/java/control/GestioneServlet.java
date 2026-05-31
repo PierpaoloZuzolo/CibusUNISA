@@ -31,6 +31,8 @@ public class GestioneServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if (session == null || session.getAttribute("utente") == null) {
 	        response.sendRedirect(request.getContextPath() + "/login");
+	    }else {
+	    	request.getRequestDispatcher("/WEB-INF/view/gestione.jsp").forward(request, response);
 	    }
 	}
 
