@@ -20,12 +20,12 @@
 	</nav>
 </header>
 
-<p>Questa finestra è visualizzabile solo dagli admin. Bentornato <% 
-	model.UtenteBean u = (model.UtenteBean) request.getAttribute("utente");
-	out.print(u.getRuolo()+" "+u.getNome()+" "+u.getCognome());
-%> 
-
 <img src="images/GestioneCibus.jpeg">
+
+
+<footer>
+&copy; 2026, CibusUNISA
+</footer>
 
 
 </body>
