@@ -20,7 +20,7 @@
 	</nav>
 </header>
 
-<img src="images/GestioneCibus.jpeg">
+<img src="images/GestioneCibus.jpeg" id="fotoDesktop">
 
 
 <footer>
