@@ -10,23 +10,20 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.sql.DataSource;
 
 import model.ProdottoBean;
 import dao.ProdottoDaoImpl;
 
-/**
- * Servlet implementation class CarrelloServlet
- */
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
         
+
         List<ProdottoBean> carrello = (List<ProdottoBean>) session.getAttribute("carrello");
         if (carrello == null) {
             carrello = new ArrayList<>();
@@ -44,11 +41,11 @@ public class CarrelloServlet extends HttpServlet {
                     carrello.add(prodotto);
                 }
                 
+
                 StringBuilder jsonStr = new StringBuilder("[");
                 for (int i = 0; i < carrello.size(); i++) {
                     ProdottoBean p = carrello.get(i);
-                   
-                    jsonStr.append("{\"nome\":\"").append(p.getNome())
+                    jsonStr.append("{\"nome\":\"").append(p.getNome().replace("\"", "\\\""))
                            .append("\", \"prezzo\":").append(p.getPrezzo()).append("}");
                     
                     if (i < carrello.size() - 1) {
@@ -56,16 +53,15 @@ public class CarrelloServlet extends HttpServlet {
                     }
                 }
                 jsonStr.append("]");
-                
 
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
                 response.getWriter().write(jsonStr.toString());
                 
             } catch (Exception e) {
+                e.printStackTrace(); 
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
         }
     }
-
 }
