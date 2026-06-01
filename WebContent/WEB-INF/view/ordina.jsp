@@ -76,14 +76,14 @@
         %>
             <p>Nessun prodotto disponibile nel catalogo.</p>
         <% } %>
-    </div> <div class="carrello-sezione">
-        <div class="carrello-card">
+    </div> <div id="carrello-sezione">
+        <div id="carrello-card">
             <h3>Il tuo ordine</h3>
-            <div class="carrello-vuoto">
-                <div class="carrello-icon">📥</div> 
+            <div id="carrello-vuoto">
+                <div id="carrello-icon">📥</div> 
                 <p>Carrello vuoto.</p>
             </div>
-            <button class="btn-checkout" disabled>Checkout</button>
+            <button id="btn-checkout" disabled>Checkout</button>
         </div>
     </div> </div>
 
