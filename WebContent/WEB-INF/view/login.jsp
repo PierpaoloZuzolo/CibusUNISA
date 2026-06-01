@@ -7,11 +7,12 @@
 <title>Accesso</title>
 <link rel="stylesheet" href="styles/accesso.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="scripts/validazioneLogin.js"></script>
+
 
 </head>
 <body>
 <a href="<%=request.getContextPath()%>/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
-<script src="scripts/validazioneLogin.js"></script>
 
 	<form id="logForm" action="login" method="POST" onsubmit="return validate()" novalidate>
 		<fieldset>
