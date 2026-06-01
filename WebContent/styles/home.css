@@ -232,7 +232,7 @@ h2.sezione{
 }
 
 
-/* --- COLONNA DESTRA: CARRELLO --- */
+/*carrello*/
 #carrello-sezione {
     flex: 1;
     position: relative;
@@ -259,6 +259,7 @@ h2.sezione{
 
 #carrello-vuoto {
     margin: 40px 0;
+    text-align: center; /* Centra l'icona e il testo */
     color: #666666;
 }
 
@@ -274,8 +275,19 @@ h2.sezione{
     margin: 0;
 }
 
-/* BOTTONE CHECKOUT DISABILITATO */
-#btn-checkout {
+#carrello-lista-dinamica p {
+    margin: 5px 0;
+}
+
+#carrello-lista-dinamica h4 {
+    margin: 10px 0;
+}
+
+.nascosto {
+    display: none !important;
+}
+
+#btn-checkout:disabled {
     width: 100%;
     padding: 14px;
     background-color: #e0e0e0;
@@ -285,8 +297,26 @@ h2.sezione{
     font-size: 16px;
     font-weight: bold;
     cursor: not-allowed;
+    margin-top: 15px;
 }
-  
+
+#btn-checkout:not(:disabled) {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #1e7e34;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+#btn-checkout:not(:disabled):hover {
+    background-color: #218838; 
+}
   
   
   
