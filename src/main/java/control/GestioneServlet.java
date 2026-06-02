@@ -29,8 +29,9 @@ public class GestioneServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		if (session == null || session.getAttribute("utente") == null) {
-	        response.sendRedirect(request.getContextPath() + "/login");
+		Object utenteObj = session.getAttribute("utente");
+		if (utenteObj == null || !((model.UtenteBean) utenteObj).getRuolo().equalsIgnoreCase("admin")) {
+	        response.sendRedirect(request.getContextPath() + "/home");
 	    }else {
 	    	request.getRequestDispatcher("/WEB-INF/view/gestione.jsp").forward(request, response);
 	    }
