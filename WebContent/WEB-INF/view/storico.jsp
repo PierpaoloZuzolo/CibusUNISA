@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>I tuoi ordini</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/storico.css">
 
 </head>
 <body>
@@ -77,6 +77,10 @@
         }
         %>
     </div>
+    
+<footer>
+&copy; 2026, CibusUNISA
+</footer>
 
 </body>
 </html>
