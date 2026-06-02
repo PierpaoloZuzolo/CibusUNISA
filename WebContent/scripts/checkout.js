@@ -46,7 +46,7 @@ function inviaOrdine(contextPath) {
     .then(data => {
         if (data.success) {
             container.innerHTML = `
-                <h3>Pagamentoriuscito! Ordine Confermato.</h3>
+                <h3>Pagamento riuscito! Ordine Confermato.</h3>
                 <p>Grazie per il tuo acquisto. Il tuo ordine è stato registrato nei nostri sistemi.</p>
                 <br>
                 <a href="${contextPath}/home" class="btn-conferma">Torna alla Home</a>
