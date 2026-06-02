@@ -16,6 +16,10 @@ import model.ProdottoBean;
 import model.CarrelloBean;
 import dao.ProdottoDaoImpl;
 
+/*Implementazione logica del carrello, ovvero la scrittura dei prodotti
+ * in linea, modifica delle quantità...
+ * */
+
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
