@@ -7,28 +7,35 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/*Alla disconnessione di perde la sessione(i prodotti)
- * */
-
-@WebServlet("/logout")
-public class DisconnessioneServlet extends HttpServlet {
+/**
+ * Servlet implementation class StoricoServlet
+ */
+@WebServlet("/StoricoServlet")
+public class StoricoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public DisconnessioneServlet() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public StoricoServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession(false) != null) {
-            request.getSession().invalidate(); 
-        }
-        
-        response.sendRedirect("ordina");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 
 }
