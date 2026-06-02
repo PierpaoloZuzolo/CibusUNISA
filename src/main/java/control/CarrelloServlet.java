@@ -13,6 +13,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import model.ProdottoBean;
+import model.CarrelloBean;
 import dao.ProdottoDaoImpl;
 
 @WebServlet("/CarrelloServlet")
@@ -24,29 +25,61 @@ public class CarrelloServlet extends HttpServlet {
         HttpSession session = request.getSession();
         
 
-        List<ProdottoBean> carrello = (List<ProdottoBean>) session.getAttribute("carrello");
+        List<CarrelloBean> carrello = (List<CarrelloBean>) session.getAttribute("carrello");
         if (carrello == null) {
             carrello = new ArrayList<>();
             session.setAttribute("carrello", carrello);
         }
-
-        if ("add".equals(action)) {
-            int codiceProdotto = Integer.parseInt(request.getParameter("codice"));
+        
+        try {
+        	int codiceProdotto = Integer.parseInt(request.getParameter("codice"));
+        	
+        if ("add".equals(action)) {       
+            boolean trovato = false;
+            for (CarrelloBean item : carrello) {
+                if (item.getProdotto().getCodice() == codiceProdotto) {
+                    item.setQuantita(item.getQuantita() + 1);
+                    trovato = true;
+                    break;
+                }
+            }
             
-            try {
+            if (!trovato) {
                 ProdottoDaoImpl dao = new ProdottoDaoImpl();
                 ProdottoBean prodotto = dao.doRetrieveByCodice(codiceProdotto);
                 
                 if (prodotto != null) {
-                    carrello.add(prodotto);
+                    carrello.add(new CarrelloBean(prodotto, 1));
                 }
+            }
+        } 
+        
+        else if ("update".equals(action)) {
+            int nuovaQuantita = Integer.parseInt(request.getParameter("quantita"));
+            for (CarrelloBean item : carrello) {
+                if (item.getProdotto().getCodice() == codiceProdotto) {
+                    if (nuovaQuantita > 0) {
+                        item.setQuantita(nuovaQuantita);
+                    }
+                    break;
+                }
+            }
+        } 
+        
+        else if ("remove".equals(action)) {
+            carrello.removeIf(item -> item.getProdotto().getCodice() == codiceProdotto);
+        }
                 
 
                 StringBuilder jsonStr = new StringBuilder("[");
                 for (int i = 0; i < carrello.size(); i++) {
-                    ProdottoBean p = carrello.get(i);
-                    jsonStr.append("{\"nome\":\"").append(p.getNome().replace("\"", "\\\""))
-                           .append("\", \"prezzo\":").append(p.getPrezzo()).append("}");
+                	CarrelloBean item = carrello.get(i);
+                	ProdottoBean p = item.getProdotto();
+                	
+                	jsonStr.append("{\"codice\":").append(p.getCodice())
+                			.append("{\"nome\":\"").append(p.getNome().replace("\"", "\\\""))
+                			.append("\", \"prezzo\":").append(p.getPrezzo()).append("}")
+                	 		.append(", \"quantita\":").append(item.getQuantita()).append("}");
                     
                     if (i < carrello.size() - 1) {
                         jsonStr.append(","); 
@@ -62,6 +95,5 @@ public class CarrelloServlet extends HttpServlet {
                 e.printStackTrace(); 
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
-        }
     }
 }
