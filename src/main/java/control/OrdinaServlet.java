@@ -17,7 +17,7 @@ import dao.ProdottoDaoImpl;
  * Servlet implementation class OrdinaServlet
  * caricamento dei prodotti nella schermata di ordina.jsp
  */
-@WebServlet("/ordina")
+@WebServlet("/OrdinaServlet")
 public class OrdinaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
