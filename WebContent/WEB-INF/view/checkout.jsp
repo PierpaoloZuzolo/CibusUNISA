@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Checkout</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/checkout.css">
 <script src="${pageContext.request.contextPath}/scripts/checkout.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
 	
 	<nav>
 		<ul> 
-			<li><a href="<%=request.getContextPath()%>/home">home</a></li>
+			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
 		</ul>
 	</nav>
 </header>
@@ -49,6 +49,10 @@
             </form>
         </div>
     </div>
+
+<footer>
+&copy; 2026, CibusUNISA
+</footer>
 
 </body>
 </html>
