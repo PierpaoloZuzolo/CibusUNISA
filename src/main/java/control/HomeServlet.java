@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import model.UtenteBean;
 import dao.UtenteDaoImpl;
 
-@WebServlet("/home")
+@WebServlet("/HomeServlet")
 public class HomeServlet extends HttpServlet{
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
