@@ -30,7 +30,7 @@ function inviaOrdine(contextPath) {
     params.append('indirizzo', indirizzo);
     params.append('metodoPagamento', metodoPagamento);
 
-    fetch(contextPath + '/CheckoutServlet', {
+    fetch(contextPath + '/checkout', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -46,7 +46,7 @@ function inviaOrdine(contextPath) {
     .then(data => {
         if (data.success) {
             container.innerHTML = `
-                <h3 style="color: green;">Pagamento fasullo riuscito! Ordine Confermato.</h3>
+                <h3>Pagamentoriuscito! Ordine Confermato.</h3>
                 <p>Grazie per il tuo acquisto. Il tuo ordine è stato registrato nei nostri sistemi.</p>
                 <br>
                 <a href="${contextPath}/home" class="btn-conferma">Torna alla Home</a>
