@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/*Alla disconnessione di perde la sessione(i prodotti)
+ * */
 
 @WebServlet("/logout")
 public class DisconnessioneServlet extends HttpServlet {
