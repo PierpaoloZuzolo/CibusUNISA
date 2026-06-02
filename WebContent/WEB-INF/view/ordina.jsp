@@ -30,10 +30,9 @@
 				model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente"); 
 				out.print ("Ciao " + u.getNome() + "! (Logout)");
 			%></a></li>
-			<li><a href="<%=request.getContextPath()%>/gestione">
 			<%
 				if(u.getRuolo().equals("admin")){%>
-				Gestione</a></li>
+				<li><a href="<%=request.getContextPath()%>/gestione">Gestione</a></li>
 			<%	
 				}
 			%>
