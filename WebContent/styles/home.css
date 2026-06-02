@@ -317,6 +317,49 @@ h2.sezione{
 #btn-checkout:not(:disabled):hover {
     background-color: #218838; 
 }
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+.cart-item-nome {
+    flex: 1; 
+    text-align: left; 
+    font-size: 15px;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.cart-input-qty {
+    width: 50px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.cart-btn-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.cart-btn-remove:hover {
+    transform: scale(1.2); 
+}
   
   
   

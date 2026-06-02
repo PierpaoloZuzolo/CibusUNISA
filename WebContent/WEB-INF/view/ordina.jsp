@@ -69,7 +69,7 @@
                     <div class="prodotto-descrizione"><%= prodotto.getDescrizione() %></div>
                     <div class="prodotto-prezzo">€ <%= prodotto.getPrezzo() %></div>
                 </div>
-                <button class="btn-add" onclick="aggiungiAlCarrello(<%= prodotto.getCodice() %>)">+</button>
+                <button class="btn-add" onclick="aggiungiAlCarrello(<%= prodotto.getCodice() %>, '<%=request.getContextPath()%>')">+</button>
             </div>
         <%		
             }
@@ -77,42 +77,57 @@
         %>
             <p>Nessun prodotto disponibile nel catalogo.</p>
         <% } %>
-    </div> <div id="carrello-sezione">
-    <div id="carrello-card">
-        <h3>Il tuo ordine</h3>
-        
-        <% 
-        java.util.List<model.ProdottoBean> carrelloSessione = (java.util.List<model.ProdottoBean>) session.getAttribute("carrello");
-        boolean cartPieno = (carrelloSessione != null && !carrelloSessione.isEmpty());
-        %>
-        
-        <div id="carrello-vuoto" class="<%= cartPieno ? "nascosto" : "" %>">
-            <div id="carrello-icon">📥</div> 
-            <p>Carrello vuoto.</p>
-        </div>
-        
-        <div id="carrello-lista-dinamica">
-        <% 
-        if (cartPieno) { 
-            java.math.BigDecimal totaleCart = java.math.BigDecimal.ZERO;
-            for(model.ProdottoBean p : carrelloSessione) {
-                totaleCart = totaleCart.add(p.getPrezzo());
-        %>
-                <p ><%= p.getNome() %> - €<%= p.getPrezzo() %></p>
-        <% 
+    </div>  <div id="carrello-sezione">
+        <div id="carrello-card">
+            <h3>Il tuo ordine</h3>
+            
+            <% 
+            java.util.List<model.CarrelloBean> carrelloSessione = (java.util.List<model.CarrelloBean>) session.getAttribute("carrello");
+            boolean cartPieno = (carrelloSessione != null && !carrelloSessione.isEmpty());
+            %>
+            
+            <div id="carrello-vuoto" class="<%= cartPieno ? "nascosto" : "" %>">
+                <div id="carrello-icon">📥</div> 
+                <p>Carrello vuoto.</p>
+            </div>
+            
+            <div id="carrello-lista-dinamica">
+            <% 
+            if (cartPieno) { 
+                java.math.BigDecimal totaleCart = java.math.BigDecimal.ZERO;
+                for(model.CarrelloBean item : carrelloSessione) {
+                    java.math.BigDecimal prezzoTotaleItem = item.getProdotto().getPrezzo().multiply(new java.math.BigDecimal(item.getQuantita()));
+                    totaleCart = totaleCart.add(prezzoTotaleItem);
+            %>
+                    <div class="cart-item-row">
+                        <span class="cart-item-nome"><%= item.getProdotto().getNome() %> - €<%= item.getProdotto().getPrezzo() %></span>
+                        <div class="cart-item-actions">
+                            <input type="number" value="<%= item.getQuantita() %>" min="1" class="cart-input-qty" 
+                            onchange="modificaQuantita(<%= item.getProdotto().getCodice() %>, this.value, 
+                            '<%=request.getContextPath()%>')">
+                            
+                            <button class="cart-btn-remove" onclick="rimuoviDalCarrello(<%= item.getProdotto().getCodice() %>, 
+                            '<%=request.getContextPath()%>')">🗑️</button>
+                        </div>
+                    </div>
+            <% 
+                } 
+            %>
+                <hr><h4>Totale: €<%= totaleCart %></h4>
+            <% 
             } 
-        %>
-            <hr><h4>Totale: €<%= totaleCart %></h4>
-        <% 
-        } 
-        %>
-        </div>
+            %>
+            </div>
 
-        <% boolean isLoggato = (session.getAttribute("utente") != null); %>
-        
-        <button id="btn-checkout" <%= cartPieno ? "" : "disabled" %> onclick="procediCheckout(<%= isLoggato %>, '<%=request.getContextPath()%>')">Checkout</button>
-    </div>
-</div> </div>
+            <% 
+            boolean isLoggato = (session.getAttribute("utente") != null); 
+            %>
+            
+            <button id="btn-checkout" <%= cartPieno ? "" : "disabled" %> onclick="procediCheckout(<%= isLoggato %>, '<%=request.getContextPath()%>')">Checkout</button>
+            
+        </div>
+    </div> 
+</div> 
 
 </body>
 </html>
