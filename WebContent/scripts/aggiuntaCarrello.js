@@ -70,6 +70,6 @@ function procediCheckout(isLoggato, contextPath) {
     if (!isLoggato) {
         window.location.href = contextPath + '/login';
     } else {
-        window.location.href = contextPath + '/CheckoutServlet';
+        window.location.href = contextPath + '/checkout';
     }
 }
