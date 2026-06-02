@@ -20,6 +20,7 @@
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
+			<li><a href="<%=request.getContextPath()%>/logout">Disconnettiti</a></li>
 		</ul>
 	</nav>
 </header>
