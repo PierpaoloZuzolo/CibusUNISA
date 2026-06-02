@@ -21,7 +21,7 @@ import dao.OrdineDaoImpl;
  * Servlet per implementazione del bottone di Checkout che manda a questa Servlet
  * implementazione anche del salvataggio dati...
  */
-@WebServlet("/CheckoutServlet")
+@WebServlet("/checkout")
 public class CheckoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
