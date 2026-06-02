@@ -70,15 +70,14 @@ public class CarrelloServlet extends HttpServlet {
             carrello.removeIf(item -> item.getProdotto().getCodice() == codiceProdotto);
         }
                 
-
                 StringBuilder jsonStr = new StringBuilder("[");
                 for (int i = 0; i < carrello.size(); i++) {
                 	CarrelloBean item = carrello.get(i);
                 	ProdottoBean p = item.getProdotto();
                 	
                 	jsonStr.append("{\"codice\":").append(p.getCodice())
-                			.append("{\"nome\":\"").append(p.getNome().replace("\"", "\\\""))
-                			.append("\", \"prezzo\":").append(p.getPrezzo()).append("}")
+                			.append(", \"nome\":\"").append(p.getNome().replace("\"", "\\\""))
+                			.append("\", \"prezzo\":").append(p.getPrezzo())
                 	 		.append(", \"quantita\":").append(item.getQuantita()).append("}");
                     
                     if (i < carrello.size() - 1) {
