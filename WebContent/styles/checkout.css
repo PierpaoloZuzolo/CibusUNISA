@@ -1,7 +1,142 @@
 @charset "UTF-8";
-
-#errore-checkout{
-	color: red; 
-	font-weight: bold; 
-	margin: 10px 0;
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    padding-top: 90px;
+    margin-top: 5px;
+    background-color: #E4E5E0;
 }
+
+#logoSopra {      
+    margin: 2px auto auto auto;
+    width: 100%;   
+    max-width: 100px; 
+    height: auto; 
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;	
+    margin: 10px 10px 0px 10px;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px 20px;
+    margin: 0px 20px 0px 0px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-sizing: border-box;
+    display: flex;                 
+    align-items: center;           
+    justify-content: space-between;
+    padding: 0px 20px;            
+    background-color: #f8f9fa;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 65%;
+    margin: 10px 0px;
+}
+
+.main-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-container h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.form-container {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444444;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+    outline: none;
+}
+
+
+#errore-checkout {
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+    min-height: 24px; 
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+
+.btn-conferma {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+
+.btn-conferma:hover {
+    background-color: #218838;
+}
+
+.btn-conferma:active {
+    transform: scale(0.98); 
+}
+
+  
