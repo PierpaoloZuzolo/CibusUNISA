@@ -8,6 +8,7 @@
 <title>Ordine</title>
 <link rel="stylesheet" href="styles/home.css">
 <script src="scripts/aggiuntaCarrello.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
