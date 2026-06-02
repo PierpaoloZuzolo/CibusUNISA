@@ -15,6 +15,7 @@ import dao.ProdottoDaoImpl;
 
 /**
  * Servlet implementation class OrdinaServlet
+ * caricamento dei prodotti nella schermata di ordina.jsp
  */
 @WebServlet("/ordina")
 public class OrdinaServlet extends HttpServlet {
