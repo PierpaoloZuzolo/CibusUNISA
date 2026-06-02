@@ -10,7 +10,7 @@ import java.io.IOException;
 /*Alla disconnessione di perde la sessione(i prodotti)
  * */
 
-@WebServlet("/logout")
+@WebServlet("/DisconnessioneServlet")
 public class DisconnessioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
