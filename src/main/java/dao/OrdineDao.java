@@ -8,5 +8,6 @@ import model.OrdineBean;
 public interface OrdineDao {
 	public void salvaOrdine(OrdineBean ordine) throws SQLException;
 	public List<OrdineBean> getOrdiniByUtente(int utenteCodice) throws SQLException;
+	 public List<OrdineBean> getOrdiniFiltrati(String dataInizio, String dataFine, Integer utenteCodice) throws Exception;
 
 }

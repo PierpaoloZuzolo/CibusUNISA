@@ -89,56 +89,63 @@ public class OrdineDaoImpl implements OrdineDao{
         }
     }
     
-    public List<OrdineBean> getOrdiniByUtente(int utenteCodice) throws SQLException {
+    public List<OrdineBean> getOrdiniFiltrati(String dataInizio, String dataFine, Integer utenteCodice) throws Exception {
         List<OrdineBean> storico = new ArrayList<>();
         Connection connection = null;
-        PreparedStatement psOrdine = null;
-        ResultSet rsOrdine = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
-        // 1. Prende gli ordini
-        String selectOrdini = "SELECT * FROM ordine WHERE utente_codice = ? ORDER BY data_ordine DESC";
-        
-        // 2. Prende i prodotti per ogni ordine (usiamo LEFT JOIN per i prodotti cancellati)
-        String selectDettagli = "SELECT d.quantita, d.prezzo_unitario, p.codice, p.nome " +
-                                "FROM dettaglio_ordine d " +
-                                "LEFT JOIN prodotto p ON d.codice_prodotto = p.codice " +
-                                "WHERE d.codice_ordine = ?";
+        String query = "SELECT * FROM ordine WHERE data_ordine BETWEEN ? AND ? ";
+        if (utenteCodice != null) {
+            query += "AND utente_codice = ? ";
+        }
+        query += "ORDER BY data_ordine DESC";
+
+       
+        String queryDettagli = "SELECT d.quantita, d.prezzo_unitario, p.codice, p.nome " +
+                               "FROM dettaglio_ordine d " +
+                               "LEFT JOIN prodotto p ON d.codice_prodotto = p.codice " +
+                               "WHERE d.codice_ordine = ?";
 
         try {
-            connection = ds.getConnection(); 
-            psOrdine = connection.prepareStatement(selectOrdini);
-            psOrdine.setInt(1, utenteCodice);
-            rsOrdine = psOrdine.executeQuery();
+            connection = ds.getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setString(1, dataInizio + " 00:00:00");
+            ps.setString(2, dataFine + " 23:59:59");
+            
+            if (utenteCodice != null) {
+                ps.setInt(3, utenteCodice);
+            }
 
-            while (rsOrdine.next()) {
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
                 OrdineBean ordine = new OrdineBean();
-                ordine.setCodice(rsOrdine.getInt("codice"));
-                ordine.setDataOrdine(rsOrdine.getTimestamp("data_ordine"));
-                ordine.setIndirizzoConsegna(rsOrdine.getString("indirizzo_consegna"));
-                ordine.setMetodoPagamento(rsOrdine.getString("metodo_pagamento"));
-                ordine.setUtenteCodice(rsOrdine.getInt("utente_codice"));
-                
+                ordine.setCodice(rs.getInt("codice"));
+                ordine.setDataOrdine(rs.getTimestamp("data_ordine"));
+                ordine.setIndirizzoConsegna(rs.getString("indirizzo_consegna"));
+                ordine.setMetodoPagamento(rs.getString("metodo_pagamento"));
+                ordine.setUtenteCodice(rs.getInt("utente_codice"));
+              
                 List<DettaglioOrdineBean> dettagli = new ArrayList<>();
                 PreparedStatement psDettaglio = null;
                 ResultSet rsDettaglio = null;
                 
                 try {
-                    psDettaglio = connection.prepareStatement(selectDettagli);
-                    psDettaglio.setInt(1, ordine.getCodice()); 
+                    psDettaglio = connection.prepareStatement(queryDettagli);
+                    psDettaglio.setInt(1, ordine.getCodice());
                     rsDettaglio = psDettaglio.executeQuery();
                     
                     while (rsDettaglio.next()) {
                         DettaglioOrdineBean dettaglio = new DettaglioOrdineBean();
                         dettaglio.setQuantita(rsDettaglio.getInt("quantita"));
                         
-                      
                         dettaglio.setPrezzoUnitario(rsDettaglio.getBigDecimal("prezzo_unitario")); 
                         
                         ProdottoBean prodotto = new ProdottoBean();
                         prodotto.setCodice(rsDettaglio.getInt("codice"));
                         
                         String nomeProdotto = rsDettaglio.getString("nome");
-                        
                         if (nomeProdotto == null) {
                             prodotto.setNome("Prodotto rimosso dal catalogo");
                         } else {
@@ -153,16 +160,18 @@ public class OrdineDaoImpl implements OrdineDao{
                     if (psDettaglio != null) psDettaglio.close();
                 }
                 
-
+              
                 ordine.setDettagli(dettagli);
-                
+
+
                 storico.add(ordine);
             }
         } finally {
-            if (rsOrdine != null) rsOrdine.close();
-            if (psOrdine != null) psOrdine.close();
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
             if (connection != null) connection.close();
         }
+        
         return storico;
     }
 }
