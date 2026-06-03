@@ -15,7 +15,7 @@
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
-			<li><a href="<%=request.getContextPath()%>/home">Gestione ordini</a></li>
+			<li><a href="<%=request.getContextPath()%>/adminOrdini">Gestione ordini</a></li>
 			
 		</ul>
 	</nav>
