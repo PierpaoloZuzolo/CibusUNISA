@@ -1,0 +1,168 @@
+@charset "UTF-8";
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+    padding-top: 40px; 
+    background-color: #E4E5E0;
+    color: black;
+}
+
+#logoSopra {      
+    margin: 2px auto auto auto;
+    width: 100%;   
+    max-width: 100px; 
+    height: auto; 
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;	
+    margin: 10px 10px 0px 10px;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px 20px;
+    margin: 0px 20px 0px 0px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-sizing: border-box;
+    display: flex;                 
+    align-items: center;           
+    justify-content: space-between;
+    padding: 0px 20px;            
+    background-color: #f8f9fa;
+}
+
+.main-container {
+    max-width: 800px; 
+    margin: 30px auto 50px auto; 
+    padding: 0 20px;
+}
+
+.main-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #561109;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    padding: 30px; 
+    margin-bottom: 35px; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.form-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.form-container input[type="date"],
+.form-container input[type="number"] {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="date"]:focus,
+.form-container input[type="number"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.form-container button {
+    background-color: #561109;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 15px;
+}
+
+.form-container button:hover {
+    background-color: black;
+}
+
+.form-container h3:first-of-type {
+    color: #561109;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid #f0f4f8; 
+    padding-bottom: 12px;
+}
+
+.form-container hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 25px 0;
+}
+
+.form-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.form-container li {
+    padding: 12px 0;
+    border-bottom: 1px dashed #cccccc;
+    line-height: 1.6;
+}
+
+.form-container li:last-child {
+    border-bottom: none;
+}
+
+.messaggio-vuoto {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    padding: 40px 20px;
+    font-weight: bold;
+}
+
+.totale-ordine {
+    text-align: right;
+    color: #28a745;
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 24px;
+    border-top: 2px solid #f0f4f8; 
+    padding-top: 20px;
+}
