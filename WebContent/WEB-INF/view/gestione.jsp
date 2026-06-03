@@ -14,8 +14,9 @@
 	<nav>
 		<ul> 
 			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
-			<li><a href="<%=request.getContextPath()%>/home">Ordini</a></li>
-			<li><a href="<%=request.getContextPath()%>/home">Menu</a></li>
+			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
+			<li><a href="<%=request.getContextPath()%>/home">Gestione ordini</a></li>
+			
 		</ul>
 	</nav>
 </header>
