@@ -35,7 +35,7 @@
                         <option value="">Seleziona un metodo...</option>
                         <option value="Carta di Credito">Carta di Credito</option>
                         <option value="PayPal">PayPal</option>
-                        <option value="Contrassegno">Contrassegno</option>
+                        <option value="Contanti">Contanti</option>
                     </select>
                 </div>
                 
