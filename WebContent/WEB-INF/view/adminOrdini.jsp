@@ -9,8 +9,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Gestione Ordini Admin</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/adminOrdini.css"></link>
 </head>
 <body>
+<header>
+	<a href="<%=request.getContextPath()%>/home"><img src="images/LogoCibusUNISA.png" alt="Logo del sito" id="logoSopra"></a>
+	
+	<nav>
+		<ul> 
+			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
+			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
+			<li><a href="<%=request.getContextPath()%>/gestione">Gestione</a></li>
+		</ul>
+	</nav>
+</header>
+
 <div class="main-container">
         <h2>Filtra Ordini (Area Amministratore)</h2>
         
