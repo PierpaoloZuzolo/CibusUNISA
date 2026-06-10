@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrazione</title>
-    <link rel="stylesheet" href="styles/accesso.css">
-    <script src="scripts/validazioneRegistrazione.js"></script>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/accesso.css">
+    <script src="<%=request.getContextPath()%>/scripts/validazioneRegistrazione.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
