@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Ordine</title>
-<link rel="stylesheet" href="styles/ordina.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/ordina.css">
 <script src="scripts/aggiuntaCarrello.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
