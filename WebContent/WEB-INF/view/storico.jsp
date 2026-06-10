@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>I tuoi ordini</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/storico.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/storico.css">
 
 </head>
 <body>
