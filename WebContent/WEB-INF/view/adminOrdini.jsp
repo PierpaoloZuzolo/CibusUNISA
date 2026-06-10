@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Gestione Ordini Admin</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/adminOrdini.css"></link>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/adminOrdini.css"></link>
 </head>
 <body>
 <header>
@@ -48,7 +48,7 @@
         if (ordiniFiltrati != null) {
             if (ordiniFiltrati.isEmpty()) {
         %>
-                <p style="text-align:center;">Nessun ordine trovato per i criteri selezionati.</p>
+                <p>Nessun ordine trovato per i criteri selezionati.</p>
         <%
             } else {
                 for (OrdineBean ordine : ordiniFiltrati) {
@@ -67,7 +67,7 @@
                         <li><%= dettaglio.getQuantita() %>x <%= dettaglio.getProdotto().getNome() %> - Subtotale: €<%= subTotale %></li>
                     <% } %>
                     </ul>
-                    <h3 style="text-align: right; color: #28a745;">Totale: €<%= totaleOrdine %></h3>
+                    <h3>Totale: €<%= totaleOrdine %></h3>
                 </div>
         <%
                 }
