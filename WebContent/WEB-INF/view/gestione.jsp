@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Gestione</title>
-<link rel="stylesheet" href="styles/gestione.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/gestione.css">
 </head>
 <body>
 <header>
