@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Accesso</title>
-<link rel="stylesheet" href="styles/accesso.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/accesso.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="scripts/validazioneLogin.js"></script>
 
