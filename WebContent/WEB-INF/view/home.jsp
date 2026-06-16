@@ -22,7 +22,7 @@
 </header>
 
 
-    <div class="hero-section">
+	<div class="hero-section">
 		<img src="images/CibusUNISAHomePage.png" alt="foto HomePage" id="fotoHomeDesktop">
 		<img src="images/CibusUNISAHomePageVerticale.png" alt="foto HomePage" id="fotoHomeTelefono">
 	
