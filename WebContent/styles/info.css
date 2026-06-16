@@ -76,21 +76,46 @@ footer {
 }
 
 .info{
-	margin-left: 10px;
+	color: black;
 	padding-bottom: 5px;
 }
 
-#info-tit{
-	margin-left: 10px;
-	text-align: center;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-section img {
+    filter: brightness(65%); 
+}
+
+.hero-testo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.hero-testo h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero-testo p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
 .infoTitolo{
 	margin-left: 10px;
 	margin-bottom: 0px;
 	text-align: center;
+	color: #561109;
 }
 
 .card-info {
@@ -104,7 +129,8 @@ footer {
     padding: 20px;
     margin: 10px 10px;
     flex: 1 1 200px;
-    box-shadow: 6px 4px 6px rgba(0,0,0,0.00);
+    box-shadow: 6px 4px 6px rgba(0,0,0,0.08);
+    border-left: 4px solid #561109;
  }
 
 .menu-grid {
@@ -120,8 +146,8 @@ footer {
     margin: 10px 10px;
     flex: 1 1 200px;
     box-shadow: 6px 4px 6px rgba(0,0,0,0.05);
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 3px solid #561109; 
+    border-bottom: 3px solid #561109; 
     border-radius: 12px;
 }
 
