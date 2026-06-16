@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Checkout</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/checkout.css">
-<script src="$<%=request.getContextPath()%>/scripts/checkout.js"></script>
+<script src="<%=request.getContextPath()%>/scripts/checkout.js"></script>
 </head>
 <body>
 <header>
