@@ -101,8 +101,8 @@ footer {
 
 .form-group input[type="text"]:focus,
 .form-group select:focus {
-    border-color: #0056b3; 
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+    border-color: black; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     outline: none;
 }
 
@@ -118,7 +118,7 @@ footer {
 
 
 .btn-conferma {
-    background-color: #28a745;
+    background-color: #561109;
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -132,7 +132,7 @@ footer {
 
 
 .btn-conferma:hover {
-    background-color: #218838;
+    background-color: #561109;
 }
 
 .btn-conferma:active {
