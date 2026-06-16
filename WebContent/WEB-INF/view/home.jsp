@@ -22,7 +22,6 @@
 </header>
 
 
-<main>
     <div class="hero-section">
 		<img src="images/CibusUNISAHomePage.png" alt="foto HomePage" id="fotoHomeDesktop">
 		<img src="images/CibusUNISAHomePageVerticale.png" alt="foto HomePage" id="fotoHomeTelefono">
@@ -47,7 +46,7 @@
             <p>Ricevi il tuo ordine caldo e pronto da mangiare dove vuoi tu!</p>
         </div>
     </div>
-</main>
+
 
 
 <footer>
