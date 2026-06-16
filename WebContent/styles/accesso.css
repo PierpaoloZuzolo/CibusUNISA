@@ -20,7 +20,7 @@ fieldset {
 input {
 	border: 1px solid black;
 	border-radius: 8px;
-	width:95%;
+	width:300px;
 }
 
 input, span {
