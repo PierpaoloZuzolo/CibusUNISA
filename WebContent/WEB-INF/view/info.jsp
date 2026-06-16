@@ -15,17 +15,22 @@
 
 	<nav>
 		<ul> 
-			<li><a href="<%=request.getContextPath()%>/home">Home</a>
+			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
 		</ul>
 	</nav>
 </header>
 
-
-<img alt="foto di cucina" src="images/Ragazzachefapanini.jpeg" id="fotoHomeDesktop">
-<img alt="foto di cucina" src="images/RagazzachefapaniniTelefono.png" id="fotoHomeTelefono">
-
-<h1 id="info-tit"> Informazioni su CibusUNISA</h1><br>
+<div class="hero-section">
+		<img src="images/Ragazzachefapanini.jpeg" alt="foto di cucina" id="fotoHomeDesktop">
+		<img src="images/RagazzachefapaniniTelefono.png" alt="foto di cucina" id="fotoHomeTelefono">
+	
+	<div class="hero-testo">
+            <h1>Informazioni su CibusUNISA</h1>
+            <p>Il gusto da vera star di Hollywood, ma con prezzi a misura di studente. Il delivery realizzato da Margot Robbie.</p>
+        </div>
+    </div>
+    
 
 <div class="card-info">
 	<div class="card-p">
