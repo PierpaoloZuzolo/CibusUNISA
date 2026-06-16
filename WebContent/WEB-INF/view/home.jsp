@@ -21,8 +21,33 @@
 	</nav>
 </header>
 
-<img src="images/CibusUNISAHomePage.png" alt="foto HomePage" id="fotoHomeDesktop">
-<img src="images/CibusUNISAHomePageVerticale.png" alt="foto HomePage" id="fotoHomeTelefono">
+
+<main>
+    <div class="hero-section">
+		<img src="images/CibusUNISAHomePage.png" alt="foto HomePage" id="fotoHomeDesktop">
+		<img src="images/CibusUNISAHomePageVerticale.png" alt="foto HomePage" id="fotoHomeTelefono">
+	
+	<div class="hero-testo">
+            <h1>Benvenuto su CibusUNISA</h1>
+            <p>Il cibo migliore, direttamente a casa tua o in ateneo.</p>
+        </div>
+    </div>
+    
+    <div class="main-container info-section">
+        <div class="info-card">
+            <h3>🍔 Scegli</h3>
+            <p>Sfoglia il nostro menù e trova i tuoi piatti preferiti in pochi click.</p>
+        </div>
+        <div class="info-card">
+            <h3>🛒 Ordina</h3>
+            <p>Aggiungi i prodotti al carrello e completa il pagamento in modo sicuro.</p>
+        </div>
+        <div class="info-card">
+            <h3>🚀 Gusta</h3>
+            <p>Ricevi il tuo ordine caldo e pronto da mangiare dove vuoi tu!</p>
+        </div>
+    </div>
+</main>
 
 
 <footer>
