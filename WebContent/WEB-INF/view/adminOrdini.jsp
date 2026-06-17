@@ -20,6 +20,7 @@
 			<li><a href="<%=request.getContextPath()%>/home">Home</a></li>
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
 			<li><a href="<%=request.getContextPath()%>/gestione">Gestione</a></li>
+			<li><a href="<%=request.getContextPath()%>/adminCatalogo">Gestione menù</a></li>
 		</ul>
 	</nav>
 </header>
