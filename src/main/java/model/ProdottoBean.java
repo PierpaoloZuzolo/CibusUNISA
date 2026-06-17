@@ -8,7 +8,7 @@ public class ProdottoBean {
 	private String nome;
 	private String descrizione;
 	private BigDecimal prezzo;
-	private String categoriaCodice;
+	private String categoriaNome;
 	private boolean attivo;
 	
 	public int getCodice() {
@@ -44,11 +44,11 @@ public class ProdottoBean {
 	}
 
 	public String getCategoriaNome() {
-		return categoriaCodice;
+		return categoriaNome;
 	}
 
-	public void setCategoriaNome(String categoriaCodice) {
-		this.categoriaCodice = categoriaCodice;
+	public void setCategoriaNome(String categoriaNome) {
+		this.categoriaNome = categoriaNome;
 	} 
 	
 	public boolean isAttivo() {
