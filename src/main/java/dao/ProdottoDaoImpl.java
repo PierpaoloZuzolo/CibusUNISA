@@ -29,7 +29,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public void doSave(ProdottoBean p) throws SQLException {
-		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_nome) VALUES (?, ?, ?, ?)";
+		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_nome, immagine) VALUES (?, ?, ?, ?, ?, ?)";
 		
 		try (Connection con = ds.getConnection(); 
 	         PreparedStatement ps = con.prepareStatement(query)) {
@@ -37,11 +37,14 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	        ps.setString(1, p.getNome());
 	        ps.setString(2, p.getDescrizione());
 	        ps.setBigDecimal(3, p.getPrezzo());
-	        if (p.getCategoriaNome() != null) {
-	        	ps.setString(4, p.getCategoriaNome());
-	        } else {
-	        	ps.setNull(4, java.sql.Types.VARCHAR);
-	        }
+	        ps.setBoolean(4, true);
+	        ps.setString(5, p.getCategoriaNome());
+
+            if (p.getImmagine() != null) {
+                ps.setBinaryStream(6, p.getImmagine());
+            } else {
+                ps.setNull(6, java.sql.Types.BLOB);
+            }
 
 	        ps.executeUpdate();
 	    }
@@ -104,5 +107,49 @@ public class ProdottoDaoImpl implements ProdottoDao {
             }
         }
         return prodotti;
+	}
+
+	@Override
+	public boolean doUpdate(ProdottoBean p) throws SQLException {
+		String query = "UPDATE prodotto SET nome=?, descrizione=?, prezzo=?, categoria_nome=?, attivo=?, immagine=? WHERE codice=?";
+        try (Connection con = ds.getConnection();
+             PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, p.getNome());
+            ps.setString(2, p.getDescrizione());
+            ps.setBigDecimal(3, p.getPrezzo());
+            ps.setString(4, p.getCategoriaNome());
+            ps.setBoolean(5, p.isAttivo());
+            
+            if (p.getImmagine() != null) {
+                ps.setBinaryStream(6, p.getImmagine());
+            } else {
+                ps.setNull(6, java.sql.Types.BLOB);
+            }
+            ps.setInt(7, p.getCodice());
+            
+            return ps.executeUpdate() > 0;
+        }
+	}
+
+	@Override
+	public List<ProdottoBean> doRetrieveAll() throws SQLException {
+		List<ProdottoBean> prodotti = new ArrayList<>();
+		String query = "SELECT * FROM prodotto ORDER BY categoria_nome";
+
+		try (Connection con = ds.getConnection(); 
+				PreparedStatement ps = con.prepareStatement(query);
+				ResultSet rs = ps.executeQuery()) {
+			ProdottoBean p = new ProdottoBean();
+			while (rs.next()) {
+				p.setCodice(rs.getInt("codice"));
+				p.setNome(rs.getString("nome"));
+				p.setDescrizione(rs.getString("descrizione"));
+				p.setPrezzo(rs.getBigDecimal("prezzo"));
+				p.setCategoriaNome(rs.getString("categoria_nome"));
+				p.setAttivo(rs.getBoolean("attivo"));
+				p.setImmagine(rs.getBinaryStream("immagine"));
+			}
+		}
+		return prodotti;
 	}
 }
