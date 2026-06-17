@@ -25,7 +25,7 @@ public class AdminOrdiniServlet extends HttpServlet {
         HttpSession session = request.getSession();
         UtenteBean utente = (UtenteBean) session.getAttribute("utente");
 
-        if (utente == null || !((model.UtenteBean) utente).getRuolo().equalsIgnoreCase("admin")) {
+        if (utente == null && !((model.UtenteBean) utente).getRuolo().equalsIgnoreCase("admin")) {
             response.sendRedirect(request.getContextPath() + "/home");
             return;
         }
