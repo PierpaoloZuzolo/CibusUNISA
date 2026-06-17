@@ -14,6 +14,8 @@ public interface ProdottoDao {
 	
 	public boolean doDelete(int codice) throws SQLException;
 	
+	public ProdottoBean doRetrieveByCodice(int codice) throws SQLException;
+	
 	public List<ProdottoBean> doRetrieveAllActive() throws SQLException;
 	
 	public List<ProdottoBean> doRetrieveAll() throws SQLException;
