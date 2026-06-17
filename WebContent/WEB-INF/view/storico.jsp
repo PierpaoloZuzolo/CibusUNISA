@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>I tuoi ordini</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/storico.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 </head>
 <body>
