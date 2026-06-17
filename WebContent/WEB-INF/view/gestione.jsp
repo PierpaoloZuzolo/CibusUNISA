@@ -21,7 +21,26 @@
 	</nav>
 </header>
 
-<img src="images/GestioneCibus.jpeg" id="fotoDesktop">
+
+<div class="hero-section">
+		<img src="images/GestioneCibus.jpeg" id="fotoDesktop">
+		<img src="images/GestioneCibusMobile.jpeg" id="fotoMobile">
+	
+	
+	<div class="hero-testo">
+	
+            <h1>Benvenuto nel menù admin di CibusUNISA</h1>
+            <p>Il menù di oggi lo decidi tu. Benvenuto in cucina. Ciao admin 
+            <%if (session.getAttribute("utente") != null ) {
+            	model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente"); 
+            	%> 
+            	<%=u.getNome() %>
+            	<%}%> 
+            	mettiti nei panni del conduttore Gerry Scotti! 
+            	
+            	</p>
+        </div>
+    </div>
 
 
 <footer>
