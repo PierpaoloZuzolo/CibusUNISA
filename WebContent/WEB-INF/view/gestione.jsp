@@ -29,8 +29,8 @@
 	
 	<div class="hero-testo">
 	
-            <h1>Benvenuto nel menù admin di CibusUNISA</h1>
-            <p>Il menù di oggi lo decidi tu. Benvenuto in cucina. Ciao admin 
+            <h1>Benvenuto in cucina di CibusUNISA</h1>
+            <p>Il menù di oggi lo decidi tu. Ciao admin 
             <%if (session.getAttribute("utente") != null ) {
             	model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente"); 
             	%> 
