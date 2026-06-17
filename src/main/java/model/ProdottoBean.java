@@ -1,5 +1,6 @@
 package model;
 
+import java.io.InputStream;
 import java.math.BigDecimal;
 
 public class ProdottoBean {
@@ -10,7 +11,16 @@ public class ProdottoBean {
 	private BigDecimal prezzo;
 	private String categoriaNome;
 	private boolean attivo;
+	private InputStream immagine; 
 	
+	public InputStream getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(InputStream immagine) {
+		this.immagine = immagine;
+	}
+
 	public int getCodice() {
 		return codice;
 	}
