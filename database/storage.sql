@@ -30,6 +30,7 @@ CREATE TABLE prodotto (
     prezzo DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     categoria_nome VARCHAR(50),
     attivo BOOLEAN DEFAULT TRUE, 
+    immagine LONGBLOB,
     FOREIGN KEY (categoria_nome) REFERENCES categoria(nome) ON DELETE SET NULL
 );
 
