@@ -1,6 +1,8 @@
 package model;
 
-public class CarrelloBean {
+import java.io.Serializable;
+
+public class CarrelloBean implements Serializable{
 	private ProdottoBean prodotto;
     private int quantita;
 

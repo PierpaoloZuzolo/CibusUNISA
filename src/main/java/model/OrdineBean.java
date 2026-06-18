@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class OrdineBean {
+public class OrdineBean implements Serializable {
 	 private static final long serialVersionUID = 1L;
 
 	    private int codice;

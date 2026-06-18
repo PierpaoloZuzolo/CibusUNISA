@@ -1,9 +1,10 @@
 package model;
 
 import java.io.InputStream;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ProdottoBean {
+public class ProdottoBean implements Serializable{
 	
 	private int codice;
 	private String nome;
