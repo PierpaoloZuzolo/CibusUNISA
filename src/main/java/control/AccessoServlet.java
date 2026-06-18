@@ -32,6 +32,7 @@ public class AccessoServlet extends HttpServlet{
             if (bean != null && bean.getPassword().equals(password)) {
                 request.getSession().setAttribute("utente", bean); 
                 response.sendRedirect(request.getContextPath() + "/ordina");
+                return;
             } else {
                 request.setAttribute("errore", "Email o password errati.");
                 request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
