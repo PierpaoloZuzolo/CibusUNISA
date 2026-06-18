@@ -65,6 +65,9 @@
         %>
             <div class="prodotto-card">
                 <div class="prodotto-info">
+                <div>
+                <img src="MostraImmagine?codice=<%= prodotto.getCodice() %>" 
+       		   onerror="this.src='<%=request.getContextPath()%>/images/LogoCibusUNISA.png'" alt="<%= prodotto.getNome() %>" class="img-catalogo"></div>
                     <div class="prodotto-nome"><%= prodotto.getNome()%></div>
                     <div class="prodotto-descrizione"><%= prodotto.getDescrizione() %></div>
                     <div class="prodotto-prezzo">€ <%= prodotto.getPrezzo() %></div>
