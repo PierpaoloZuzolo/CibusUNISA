@@ -98,7 +98,8 @@
                 <tr>
                     <td>
                         <!-- Richiamo alla Servlet tecnica per i BLOB -->
-                        <img src="MostraImmagine?codice=<%=p.getCodice()%>" alt="<%=p.getNome()%>" class="thumb">
+                        <img src="MostraImmagine?codice=<%=p.getCodice()%>" alt="<%=p.getNome()%>" 
+                         onerror="this.src='<%=request.getContextPath()%>/images/LogoCibusUNISA.png'" class="thumb">
                     </td>
                     <td><%=p.getNome()%></td>
                     <td><%=p.getCategoriaNome()%></td> 
