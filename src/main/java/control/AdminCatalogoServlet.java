@@ -45,6 +45,8 @@ public class AdminCatalogoServlet extends HttpServlet {
 	        try {
 	            List<ProdottoBean> prodotti = dao.doRetrieveAll();
 	            request.setAttribute("prodotti", prodotti);
+	            List<String> categorie = dao.doRetrieveAllCategories(); 
+	            request.setAttribute("categorie", categorie);
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
