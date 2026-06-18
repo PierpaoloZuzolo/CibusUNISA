@@ -16,7 +16,7 @@ import java.util.List;
 import dao.ProdottoDaoImpl;
 
 /**
- * Servlet implementation class AdminCatalogoServlet
+ * implementazione per catalago dell'admin
  */
 @WebServlet("/adminCatalogo")
 @MultipartConfig //Per il caricamento delle immagini

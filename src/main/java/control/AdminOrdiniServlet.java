@@ -15,7 +15,7 @@ import java.util.List;
 import dao.OrdineDaoImpl;
 
 /**
- * Servlet implementation class AdminOrdiniServlet
+ * implementazione ordini di tutti per gli admin
  */
 @WebServlet("/adminOrdini")
 public class AdminOrdiniServlet extends HttpServlet {

@@ -13,6 +13,9 @@ import javax.sql.DataSource;
 import model.UtenteBean;
 import dao.UtenteDaoImpl;
 
+/**
+ * impl. registrazione per gli utenti
+ * **/
 @WebServlet("/Registration")
 public class RegistrazioneServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;

@@ -75,7 +75,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	            con.commit();
 
 	        } catch (SQLException e) {
-	            // In caso di errore (es. dati mancanti), annulliamo tutto (Rollback)
+	            // In caso di errore (es. dati mancanti), annulliamo tutto 
 	            con.rollback();
 	            throw e; // Rilanciamo l'eccezione alla Servlet
 	        } finally {

@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Servlet implementation class GestioneServlet
+ * imp. per la pagina gestione(Con gerry)
  */
 @WebServlet("/gestione")
 public class GestioneServlet extends HttpServlet {

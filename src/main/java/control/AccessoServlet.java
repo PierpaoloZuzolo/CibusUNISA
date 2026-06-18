@@ -13,6 +13,10 @@ import javax.sql.DataSource;
 import model.UtenteBean;
 import dao.UtenteDaoImpl;
 
+/**
+ * Servlet per implementazione login
+ * **/
+
 @WebServlet("/login")
 public class AccessoServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
