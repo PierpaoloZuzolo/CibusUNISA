@@ -32,6 +32,7 @@ public class GestioneServlet extends HttpServlet {
 		Object utenteObj = session.getAttribute("utente");
 		if (utenteObj == null || !((model.UtenteBean) utenteObj).getRuolo().equalsIgnoreCase("admin")) {
 	        response.sendRedirect(request.getContextPath() + "/home");
+	        return;
 	    }else {
 	    	request.getRequestDispatcher("/WEB-INF/view/gestione.jsp").forward(request, response);
 	    }
