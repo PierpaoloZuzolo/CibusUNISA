@@ -23,6 +23,11 @@
 			<li><a href="<%=request.getContextPath()%>/ordina">Ordina</a></li>
 			<li><a href="<%=request.getContextPath()%>/gestione">Gestione</a></li>
 			<li><a href="<%=request.getContextPath()%>/adminCatalogo">Gestione menù</a></li>
+			<li><a href="<%=request.getContextPath()%>/logout">
+            <%
+				model.UtenteBean u = (model.UtenteBean) session.getAttribute("utente"); 
+				out.print ("Ciao " + u.getNome() + "! (Logout)");
+			%></a></li>
 		</ul>
 	</nav>
 </header>
