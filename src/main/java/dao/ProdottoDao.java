@@ -22,5 +22,7 @@ public interface ProdottoDao {
 	
 	public List<String> doRetrieveAllCategories() throws SQLException ;
 	
+	public boolean doActivate(int codice) throws SQLException;
+	
 	
 }

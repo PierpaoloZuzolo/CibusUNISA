@@ -157,7 +157,6 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	@Override
 	public List<String> doRetrieveAllCategories() throws SQLException {
 	    List<String> categorie = new ArrayList<>();
-	    // Query per ottenere solo nomi univoci
 	    String query = "SELECT DISTINCT categoria_nome FROM prodotto ORDER BY categoria_nome";
 	    
 	    try (Connection con = ds.getConnection(); 
@@ -168,5 +167,14 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	        }
 	    }
 	    return categorie;
+	}
+	
+	public boolean doActivate(int codice) throws SQLException {
+	    String query = "UPDATE prodotto SET attivo = TRUE WHERE codice = ?";
+	    try (Connection con = ds.getConnection();
+	         PreparedStatement ps = con.prepareStatement(query)) {
+	        ps.setInt(1, codice);
+	        return ps.executeUpdate() > 0;
+	    }
 	}
 }
