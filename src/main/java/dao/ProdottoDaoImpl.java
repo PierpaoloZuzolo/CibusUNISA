@@ -139,8 +139,8 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		try (Connection con = ds.getConnection(); 
 				PreparedStatement ps = con.prepareStatement(query);
 				ResultSet rs = ps.executeQuery()) {
-			ProdottoBean p = new ProdottoBean();
 			while (rs.next()) {
+				ProdottoBean p = new ProdottoBean();
 				p.setCodice(rs.getInt("codice"));
 				p.setNome(rs.getString("nome"));
 				p.setDescrizione(rs.getString("descrizione"));
@@ -148,8 +148,25 @@ public class ProdottoDaoImpl implements ProdottoDao {
 				p.setCategoriaNome(rs.getString("categoria_nome"));
 				p.setAttivo(rs.getBoolean("attivo"));
 				p.setImmagine(rs.getBinaryStream("immagine"));
+				prodotti.add(p);
 			}
 		}
 		return prodotti;
+	}
+	
+	@Override
+	public List<String> doRetrieveAllCategories() throws SQLException {
+	    List<String> categorie = new ArrayList<>();
+	    // Query per ottenere solo nomi univoci
+	    String query = "SELECT DISTINCT categoria_nome FROM prodotto ORDER BY categoria_nome";
+	    
+	    try (Connection con = ds.getConnection(); 
+	         PreparedStatement ps = con.prepareStatement(query);
+	         ResultSet rs = ps.executeQuery()) {
+	        while (rs.next()) {
+	            categorie.add(rs.getString("categoria_nome"));
+	        }
+	    }
+	    return categorie;
 	}
 }

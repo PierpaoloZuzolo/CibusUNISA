@@ -20,5 +20,7 @@ public interface ProdottoDao {
 	
 	public List<ProdottoBean> doRetrieveAll() throws SQLException;
 	
+	public List<String> doRetrieveAllCategories() throws SQLException ;
+	
 	
 }
