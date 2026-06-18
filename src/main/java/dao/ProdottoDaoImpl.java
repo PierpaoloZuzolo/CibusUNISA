@@ -29,24 +29,59 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public void doSave(ProdottoBean p) throws SQLException {
-		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_nome, immagine) VALUES (?, ?, ?, ?, ?, ?)";
+		String queryCatCheck = "SELECT nome FROM categoria WHERE nome = ?";
+	    String queryCatInsert = "INSERT INTO categoria (nome) VALUES (?)";
+		String query = "INSERT INTO prodotto (nome, descrizione, prezzo, categoria_nome, attivo, immagine) VALUES (?, ?, ?, ?, ?, ?)";
 		
-		try (Connection con = ds.getConnection(); 
-	         PreparedStatement ps = con.prepareStatement(query)) {
+		try (Connection con = ds.getConnection()) {
+	        try {
+	            // disabilitiamo il salvataggio automatico
+	            con.setAutoCommit(false);
 
-	        ps.setString(1, p.getNome());
-	        ps.setString(2, p.getDescrizione());
-	        ps.setBigDecimal(3, p.getPrezzo());
-	        ps.setBoolean(4, true);
-	        ps.setString(5, p.getCategoriaNome());
+	            // Controllo ed eventuale inserimento della categoria
+	            String catNome = p.getCategoriaNome();
+	            if (catNome != null && !catNome.trim().isEmpty()) {
+	                try (PreparedStatement psCheck = con.prepareStatement(queryCatCheck)) {
+	                    psCheck.setString(1, catNome);
+	                    try (ResultSet rs = psCheck.executeQuery()) {
+	                        if (!rs.next()) { // Se il ResultSet è vuoto, la categoria non esiste
+	                            try (PreparedStatement psInsertCat = con.prepareStatement(queryCatInsert)) {
+	                                psInsertCat.setString(1, catNome);
+	                                psInsertCat.executeUpdate(); // Creiamo la nuova categoria
+	                            }
+	                        }
+	                    }
+	                }
+	            }
 
-            if (p.getImmagine() != null) {
-                ps.setBinaryStream(6, p.getImmagine());
-            } else {
-                ps.setNull(6, java.sql.Types.BLOB);
-            }
+	            // Inserimento del prodotto
+	            try (PreparedStatement ps = con.prepareStatement(query)) {
+	                ps.setString(1, p.getNome());
+	                ps.setString(2, p.getDescrizione());
+	                ps.setBigDecimal(3, p.getPrezzo());
+	                ps.setString(4, p.getCategoriaNome());
+	                ps.setBoolean(5, true);
 
-	        ps.executeUpdate();
+	                if (p.getImmagine() != null) {
+	                    ps.setBinaryStream(6, p.getImmagine());
+	                } else {
+	                    ps.setNull(6, java.sql.Types.BLOB);
+	                }
+
+	                ps.executeUpdate();
+	            }
+
+	            // Se arriviamo qui senza errori, confermiamo tutte le operazioni nel DB
+	            con.commit();
+
+	        } catch (SQLException e) {
+	            // In caso di errore (es. dati mancanti), annulliamo tutto (Rollback)
+	            con.rollback();
+	            throw e; // Rilanciamo l'eccezione alla Servlet
+	        } finally {
+	            // Ripristiniamo il comportamento di default della connessione
+	            con.setAutoCommit(true);
+	        }
 	    }
 	}
 
@@ -176,5 +211,22 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	        ps.setInt(1, codice);
 	        return ps.executeUpdate() > 0;
 	    }
+	}
+	
+	public byte[] getImmagineByCodice(int codice) throws SQLException {
+	    byte[] immagine = null;
+	    String query = "SELECT immagine FROM prodotto WHERE codice = ?";
+	   
+	    try (Connection con = ds.getConnection();
+	         PreparedStatement ps = con.prepareStatement(query)) {
+	        
+	        ps.setInt(1, codice);
+	        try (ResultSet rs = ps.executeQuery()) {
+	            if (rs.next()) {
+	                immagine = rs.getBytes("immagine");
+	            }
+	        }
+	    }
+	    return immagine;
 	}
 }
