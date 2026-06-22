@@ -146,7 +146,11 @@ public class ProdottoDaoImpl implements ProdottoDao {
 
 	@Override
 	public boolean doUpdate(ProdottoBean p) throws SQLException {
-		String query = "UPDATE prodotto SET nome=?, descrizione=?, prezzo=?, categoria_nome=?, attivo=?, immagine=? WHERE codice=?";
+		boolean updateImage = (p.getImmagine() != null);
+		
+		String query = updateImage ? 
+				"UPDATE prodotto SET nome=?, descrizione=?, prezzo=?, categoria_nome=?, attivo=?, immagine=? WHERE codice=?"
+				:"UPDATE prodotto SET nome=?, descrizione=?, prezzo=?, categoria_nome=?, attivo=? WHERE codice=?";
         try (Connection con = ds.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
             ps.setString(1, p.getNome());
@@ -157,10 +161,11 @@ public class ProdottoDaoImpl implements ProdottoDao {
             
             if (p.getImmagine() != null) {
                 ps.setBinaryStream(6, p.getImmagine());
+                ps.setInt(7, p.getCodice());
             } else {
-                ps.setNull(6, java.sql.Types.BLOB);
+                ps.setInt(6, p.getCodice());
             }
-            ps.setInt(7, p.getCodice());
+            
             
             return ps.executeUpdate() > 0;
         }
