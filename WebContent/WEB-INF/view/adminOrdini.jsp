@@ -84,5 +84,9 @@
         %>
     </div>
 
+<footer>
+&copy; 2026, CibusUNISA
+</footer>
+
 </body>
 </html>
