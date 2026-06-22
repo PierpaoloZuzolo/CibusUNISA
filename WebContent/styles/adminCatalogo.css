@@ -45,9 +45,11 @@ header {
     background-color: #f8f9fa;
 }
 .container {
-    width: 90%;
+    width: 95%;
+    max-width: 1200px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 h1, h2 {
@@ -83,7 +85,14 @@ h1, h2 {
     box-sizing: border-box; /* Responsive fix */
 }
 
-/* Tabella Responsive [1] */
+/* Tabella Responsive */
+.tabella-sezione {
+    width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    margin-top: 20px;
+}
+
 .responsive-table {
     width: 100%;
     border-collapse: collapse;
@@ -94,6 +103,7 @@ h1, h2 {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
+    white-space: nowrap
 }
 
 .responsive-table th {
@@ -141,7 +151,7 @@ h1, h2 {
 .status.active { background-color: #28a745; }
 .status.inactive { background-color: #6c757d; }
 
-/* Stile per la sezione di modifica (Punto 2) */
+/* Stile per la sezione di modifica */
 .edit-highlight {
     background-color: #fdfdfe;
     border: 2px solid black; 
@@ -210,14 +220,52 @@ h1, h2 {
     text-align: center;
     text-decoration: none;
     color: #6c757d;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #6c757d;
     border-radius: 4px;
     margin-top: 5px;
     transition: all 0.3s;
+    display: block;
 }
 
 .btn-cancel:hover {
     background-color: #6c757d;
     color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 65%;
+    margin: 10px 0px;
+}
+
+@media (max-width: 768px) { 
+	body {
+        padding-top: 140px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    nav ul {
+        margin-top: 10px;
+        padding: 0;
+        display: flex;       
+        flex-wrap: wrap;     
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    footer {
+        font-size: 0.8rem; 
+        padding: 10px;
+    }
 }
