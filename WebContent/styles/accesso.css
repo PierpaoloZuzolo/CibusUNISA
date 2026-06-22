@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-	max-width: 300px; 
+	max-width: 600px; 
     width: 95%;   
     margin: 0 auto;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -9,7 +9,7 @@ body {
 
 fieldset {
 	max-width: 500px; 
-    width: 90%;       
+    width: 100%;       
     margin: 30px auto; 
     border: 1px solid #D3D3D3;
     border-radius: 7px;
@@ -20,10 +20,13 @@ fieldset {
 input {
 	border: 1px solid black;
 	border-radius: 8px;
-	width:300px;
+	width: 100%;
+	max-width: 100%;      
+    box-sizing: border-box;
+    padding:8px;
 }
 
-input, span {
+span {
 	padding: 3px;
 	
 }
@@ -33,16 +36,15 @@ label, input {
 }
 
 div {
-	margin: 6px 0 6px 0;
+	margin: 12px 0;      
+    display: flex;       
+    flex-direction: column; 
+    align-items: flex-start;
 }
 
 .error {
 	color: red;
 	font-size: smaller;
-}
-
-label{
-	font-size: medium;
 }
 
 p{
@@ -57,12 +59,17 @@ h3{
 label{
 	font-size: 90%;
 	font-weight: bold;
+	margin-bottom: 4px;
 }
 
 input[type="submit"]{
 	color: #561109;
 	border-radius: 15px;
 	border-color: #561109;
+	width: auto;         
+    padding: 8px 20px;  
+    cursor: pointer;   
+    align-self: center
 }
 
 #logoSopra {
