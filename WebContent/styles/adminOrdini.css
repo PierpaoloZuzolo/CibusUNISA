@@ -2,7 +2,7 @@
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     margin: 0;
-    padding-top: 40px; 
+    padding-top: 90px; 
     background-color: #E4E5E0;
     color: black;
 }
@@ -22,6 +22,7 @@ a:link, a:visited {
 nav ul {
     list-style-type: none;	
     margin: 10px 10px 0px 10px;
+    padding: 0px;
 }
 
 nav ul li {
@@ -93,6 +94,8 @@ header {
     font-size: 15px;
     font-family: inherit;
     transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+    width: 100%;
 }
 
 .form-container input[type="date"]:focus,
@@ -165,4 +168,50 @@ header {
     font-size: 24px;
     border-top: 2px solid #f0f4f8; 
     padding-top: 20px;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 65%;
+    margin: 10px 0px;
+}
+
+@media (max-width: 768px) { 
+	body {
+        padding-top: 140px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    nav ul {
+        margin-top: 10px;
+        padding: 0;
+        display: flex;       
+        flex-wrap: wrap;     
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+    }
+    
+    .main-container {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+
+    footer {
+        font-size: 0.8rem; 
+        padding: 10px;
+    }
 }
