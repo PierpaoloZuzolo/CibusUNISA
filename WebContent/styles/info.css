@@ -22,6 +22,7 @@ a:link, a:visited {
 nav ul {
     list-style-type: none;	
     margin: 10px 10px 0px 10px;
+    padding: 0;
 }
 
 nav ul li {
@@ -131,6 +132,7 @@ footer {
     flex: 1 1 200px;
     box-shadow: 6px 4px 6px rgba(0,0,0,0.08);
     border-left: 4px solid #561109;
+    box-sizing: border-box;
  }
 
 .menu-grid {
@@ -149,6 +151,7 @@ footer {
     border-top: 3px solid #561109; 
     border-bottom: 3px solid #561109; 
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .menu-card:hover {
@@ -172,7 +175,11 @@ footer {
   	text-align: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+	body {
+        padding-top: 140px;
+    }
+	
     .menu-grid {
         flex-direction: column;
         gap: 15px; 
@@ -185,24 +192,29 @@ footer {
     }
     
     #frase {
-        padding: 15px;
+        padding: 20px 15px;
         margin-top: 10px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
       
     header {
         flex-direction: column;
-        padding: 5px;
+        padding: 10px;
     }
     
     nav ul {
         margin-top: 5px;
-        text-align: center; 
         padding: 5px;
+        display: flex;       
+        flex-wrap: wrap;     
+        justify-content: center;
+        gap: 10px;
     }
     
     nav ul li {
-        display: inline-block;
-        margin-bottom: 5px;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
     }
 
     footer {
@@ -221,14 +233,14 @@ footer {
         margin: 0;
     }
     
-    .menu-grid {
+    .menu-grid, .card-info {
         flex-direction: column;
         gap: 15px; 
+        padding: 0 10px;
     }
 
-    .menu-card {
+    .menu-card, .card-p {
         flex: 1 1 100%; 
-        margin-top: 0; 
-        margin-bottom: 0;
+        margin: 0 0 15px 0;
     }
 }
