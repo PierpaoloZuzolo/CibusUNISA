@@ -23,6 +23,7 @@ a:link, a:visited {
 nav ul {
     list-style-type: none;	
     margin: 10px 10px 0px 10px;
+    padding: 0;
 }
 
 nav ul li {
@@ -107,7 +108,8 @@ footer {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 25px;
-    width: 30%;
+    width: 33%;
+    box-sizing: border-box;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s;
@@ -124,21 +126,29 @@ footer {
 }
 
   
-@media (max-width: 700px) {   
+@media (max-width: 768px) {  
+	body {
+        padding-top: 140px; 
+    }
+    
     header {
         flex-direction: column;
-        padding: 5px;
+        padding: 10px;
     }
     
     nav ul {
-        margin-top: 5px;
-        text-align: center; 
-        padding: 5px;
+        margin-top: 10px;
+        padding: 0;
+        display: flex;      
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
     
     nav ul li {
-        display: inline-block;
-        margin-bottom: 5px;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
     }
 
     footer {
@@ -159,6 +169,7 @@ footer {
     
      .info-section { 
         flex-direction: column; 
+        margin: 20px auto;
     }
     
     .info-card { 
@@ -167,11 +178,16 @@ footer {
         margin-bottom: 15px; 
     }
     
+    .hero-testo {
+        width: 90%;
+    }
+    
     .hero-testo h1 { 
-        font-size: 2rem; 
+        font-size: 1.8rem; 
     }
     
     .hero-testo p { 
-        font-size: 1.2rem; 
+        font-size: 1.1rem; 
+        margin-bottom: 15px;
     }
 }
