@@ -28,6 +28,7 @@ h2.sezione{
     padding: 20px 0;
     border-bottom: 1px dashed #e0e0e0;
     border-color: black;
+    gap: 10px;
 }
 
 .prodotto-info {
@@ -104,7 +105,7 @@ h2.sezione{
 
 #carrello-vuoto {
     margin: 40px 0;
-    text-align: center; /* Centra l'icona e il testo */
+    text-align: center;
     color: #666666;
 }
 
@@ -229,6 +230,7 @@ a:link, a:visited {
 nav ul {
     list-style-type: none;	
     margin: 10px 10px 0px 10px;
+    padding: 0;
 }
 
 nav ul li {
@@ -266,25 +268,56 @@ footer {
     margin-right: 5px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+	body {
+        padding-top: 200px; 
+    }
+    
     header {
         flex-direction: column;
-        padding: 5px;
+        padding: 10px;
     }
     
     nav ul {
-        margin-top: 5px;
-        text-align: center; 
-        padding: 5px;
+        margin-top: 10px;
+        padding: 0;
+        display: flex;       
+        flex-wrap: wrap;    
+        justify-content: center;
+        gap: 10px;
     }
     
     nav ul li {
-        display: inline-block;
-        margin-bottom: 5px;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
     }
 
     footer {
         font-size: 0.8rem; 
         padding: 10px;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .menu-sezione {
+        padding: 0;
+    }
+
+    #carrello-sezione {
+        width: 100%; 
+    }
+
+    #carrello-card {
+        position: static; 
+        padding: 15px;
+    }
+
+    .prodotto-card {
+        flex-wrap: wrap; 
     }
 }
