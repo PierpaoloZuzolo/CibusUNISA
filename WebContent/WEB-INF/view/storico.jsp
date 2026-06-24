@@ -46,8 +46,8 @@
            
             <div class="form-container">
                 <h3>Ordine #<%= ordine.getCodice() %> del <%= ordine.getDataOrdine() %></h3>
-                <p><strong>Indirizzo di Spedizione:</strong> <%= ordine.getIndirizzoConsegna() %></p>
-                <p><strong>Metodo di Pagamento:</strong> <%= ordine.getMetodoPagamento() %></p>
+                <p>Indirizzo di Spedizione: <%= ordine.getIndirizzoConsegna() %></p>
+                <p>Metodo di Pagamento: <%= ordine.getMetodoPagamento() %></p>
                 
                 <hr>
                 
@@ -62,7 +62,7 @@
                         totaleOrdine = totaleOrdine.add(subTotale);
                 %>
                     <li>
-                        <strong><%= dettaglio.getQuantita() %>x <%= dettaglio.getProdotto().getNome() %></strong> <br>
+                        <%= dettaglio.getQuantita() %>x <%= dettaglio.getProdotto().getNome() %> <br>
                         <span>
                             Prezzo d'acquisto: €<%= prezzoStorico %> | Subtotale: €<%= subTotale %>
                         </span>
